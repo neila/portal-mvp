@@ -2,6 +2,8 @@ import AppLayout from '@lib/components/Layouts/AppLayout'
 import { useSession } from 'next-auth/react'
 import { useQuery } from 'react-query'
 import superagent from 'superagent'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 const Page = () => {
     const { status, data: session } = useSession({
@@ -27,6 +29,11 @@ const Page = () => {
     }
 
     console.log(withSessionQuery)
+
+    const router = useRouter()
+    if (session) { router.push(`/home`) } else { router.push(`/`)}
+
+
     return (
         <>
             <AppLayout title="Server Redirect">

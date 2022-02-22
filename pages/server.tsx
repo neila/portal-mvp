@@ -2,7 +2,6 @@ import AppLayout from '@lib/components/Layouts/AppLayout'
 import { useSession } from 'next-auth/react'
 import { getSession } from '@lib/auth/session'
 import Loader from '@lib/components/Loader'
-import Router from 'next/router'
 
 const Page = () => {
     const { status, data: session } = useSession({
@@ -14,8 +13,6 @@ const Page = () => {
     }
 
     console.log(status, session)
-
-    if (session) { Router.push(`/home`) }
 
     return (
         <>
@@ -55,6 +52,7 @@ const Page = () => {
 }
 
 export async function getServerSideProps(context) {
+    
     return {
         props: {
             session: await getSession(context),

@@ -1,9 +1,10 @@
 import AppLayout from '@lib/components/Layouts/AppLayout'
 import { useSession } from 'next-auth/react'
 import Loader from '@lib/components/Loader'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 
 const Page = () => {
+    const router = useRouter()
     const { status, data: session } = useSession({
         required: false,
     })
@@ -12,7 +13,8 @@ const Page = () => {
         return <Loader />
     }
 
-    if (session) { Router.push(`/home`) }
+    // if (session) { Router.push(`/home`) }
+    if (session) { router.push(`/home`) } else { router.push(`/`) }
 
     return (
         <>

@@ -21,28 +21,28 @@ const AppLayout = (props) => {
             title: 'Auth',
             href: '/',
         },
-        {
-            title: 'Client',
-            href: '/client',
-        },
-        {
-            title: 'Server',
-            href: '/server',
-        },
+        // {
+        //     title: 'Client',
+        //     href: '/client',
+        // },
+        // {
+        //     title: 'Server',
+        //     href: '/server',
+        // },
     ]
     const NAV_ITEMS = [
         {
             title: 'Home',
             href: '/home',
         },
-        {
-            title: 'Client Redirect',
-            href: '/client-redirect',
-        },
-        {
-            title: 'Server Redirect',
-            href: '/server-redirect',
-        },
+        // {
+        //     title: 'Client Redirect',
+        //     href: '/client-redirect',
+        // },
+        // {
+        //     title: 'Server Redirect',
+        //     href: '/server-redirect',
+        // },
     ]
 
     return (
