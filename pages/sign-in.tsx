@@ -25,7 +25,7 @@ export default function Page({ csrfToken, providers }) {
         setSubmitting(true)
         try {
             signIn('app-login', {
-                callbackUrl: '/',
+                callbackUrl: '/home',
                 email: data.email,
                 password: data.password,
             })
@@ -180,7 +180,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const session = await getSession(context)
 
     if (session) {
-        return { redirect: { permanent: false, destination: '/' } }
+        return { redirect: { permanent: false, destination: '/home' } }
     }
 
     const csrfToken = await getCsrfToken({ req: context.req })

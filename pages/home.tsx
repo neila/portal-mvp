@@ -5,7 +5,7 @@ import superagent from 'superagent'
 
 const Page = () => {
     const { status, data: session } = useSession({
-        required: false,
+        required: true,
     })
 
     const withSessionQuery = useQuery(
@@ -23,14 +23,18 @@ const Page = () => {
     )
 
     if (status === 'loading') {
-        return 'Loading or not authenticated...'
+        return (
+            <div className="min-h-screen bg-neutral-600 text-center py-48">
+                <h1>Loading or not authenticated...</h1>
+            </div>
+            )
     }
 
     console.log(withSessionQuery)
     if (!session) {
         return (
             <>
-                <AppLayout title="With Session">
+                <AppLayout title="Home">
                     <blockquote>
                         <h1>Access Denied</h1>
                         <h1>
@@ -47,7 +51,7 @@ const Page = () => {
 
     return (
         <>
-            <AppLayout title="With Session">
+            <AppLayout title="Home">
                 <div>
                     <h1>
                         Hello, {session.user.name ?? session.user.email} You can

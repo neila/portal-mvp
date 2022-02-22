@@ -16,9 +16,9 @@ const AppLayout = (props) => {
     const router = useRouter()
 
     const currentPath = router.pathname
-    const NAV_ITEMS = [
+    const NAV_AUTH = [
         {
-            title: 'Home',
+            title: 'Auth',
             href: '/',
         },
         {
@@ -29,9 +29,11 @@ const AppLayout = (props) => {
             title: 'Server',
             href: '/server',
         },
+    ]
+    const NAV_ITEMS = [
         {
-            title: 'With Session',
-            href: '/with-session',
+            title: 'Home',
+            href: '/home',
         },
         {
             title: 'Client Redirect',
@@ -52,7 +54,7 @@ const AppLayout = (props) => {
                             <div className="flex-1 px-4 flex mt-1 justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <button
                                     type="button"
-                                    className="px-4 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 "
+                                    className="px-4 text-gray-400 focus:outline-none"
                                 >
                                     <Image
                                         className="h-8 w-8 mx-auto"
@@ -144,25 +146,47 @@ const AppLayout = (props) => {
                         <div className="relative flex-shrink-0 flex h-16 bg-neutral-600">
                             <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <div className="flex flex-1">
-                                    {NAV_ITEMS.map((item) => (
-                                        <Link key={item.title} href={item.href}>
-                                            <a
-                                                className={classNames(
-                                                    item.href === currentPath
-                                                        ? 'border-b border-indigo-600 text-white'
-                                                        : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
-                                                    'group flex items-center px-2 py-2 text-sm leading-6 font-medium'
-                                                )}
-                                                aria-current={
-                                                    item.href === currentPath
-                                                        ? 'page'
-                                                        : undefined
-                                                }
-                                            >
-                                                {item.title}
-                                            </a>
-                                        </Link>
-                                    ))}
+                                    {status !== 'authenticated' ? (
+                                        NAV_AUTH.map((item) => (
+                                            <Link key={item.title} href={item.href}>
+                                                <a
+                                                    className={classNames(
+                                                        item.href === currentPath
+                                                            ? 'border-b border-indigo-600 text-white'
+                                                            : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
+                                                        'group flex items-center px-2 py-2 text-sm leading-6 font-medium'
+                                                    )}
+                                                    aria-current={
+                                                        item.href === currentPath
+                                                            ? 'page'
+                                                            : undefined
+                                                    }
+                                                >
+                                                    {item.title}
+                                                </a>
+                                            </Link>
+                                        ))
+                                    ) : (
+                                        NAV_ITEMS.map((item) => (
+                                            <Link key={item.title} href={item.href}>
+                                                <a
+                                                    className={classNames(
+                                                        item.href === currentPath
+                                                            ? 'border-b border-indigo-600 text-white'
+                                                            : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
+                                                        'group flex items-center px-2 py-2 text-sm leading-6 font-medium'
+                                                    )}
+                                                    aria-current={
+                                                        item.href === currentPath
+                                                            ? 'page'
+                                                            : undefined
+                                                    }
+                                                >
+                                                    {item.title}
+                                                </a>
+                                            </Link>
+                                        )))
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -175,7 +199,7 @@ const AppLayout = (props) => {
                                         <div className="flex items-center">
                                             <div>
                                                 <div className="flex items-center">
-                                                    <h1 className="text-xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">
+                                                    <h1 className="text-xl font-bold leading-7 text-neutral-400 sm:leading-9 sm:truncate">
                                                         {props.title}
                                                     </h1>
                                                 </div>
