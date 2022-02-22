@@ -1,26 +1,24 @@
-import AppLayout from "@lib/components/Layouts/AppLayout";
-import Image from 'next/image';
+import AppLayout from '@lib/components/Layouts/AppLayout'
+import { signIn } from "next-auth/react";
+import Image from 'next/image'
 
 const Page = () => {
-  return (
-    <>
-      <AppLayout>
-        {/* <blockquote> */}
-        <h1>Welcome to the PlanetScale Next.js Starter App!</h1>
-        <p>
-          This is an example site to demonstrate how to use{" "}
-          <a href={`https://next-auth.js.org`}>NextAuth.js</a> for
-          authentication with PlanetScale and Prisma.
-        </p>
-        <blockquote>
-          <p>  
-            You can find how to get started{" "}
-            <a href={`https://github.com/planetscale/nextjs-planetscale-starter`}>here</a>.
-          </p>
-        </blockquote>
-      </AppLayout>
-    </>
-  );
-};
+    return (
+        <>
+            <AppLayout>
+                {/* <blockquote> */}
+                <h1>Welcome to UNCHAIN developer's portal!</h1>
 
-export default Page;
+                <blockquote>
+                    <p>
+                        Seems like you're still not logged in. Please 
+                        <button type="button" onClick={() => signIn()}> &nbsp;<a>login</a>&nbsp; </button> 
+                        to continue.
+                    </p>
+                </blockquote>
+            </AppLayout>
+        </>
+    )
+}
+
+export default Page

@@ -1,6 +1,7 @@
 import { getCsrfToken, getSession, signIn } from "next-auth/react";
 import { GetServerSidePropsContext } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -43,10 +44,11 @@ export default function Page({ csrfToken }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center py-12">
-        <img
-          className="h-16 mx-auto"
-          src="/assets/planet-scale.svg"
-          alt="PlanetScale Logo"
+        <Image
+          className="h-16 w-16 mx-auto"
+          src="/assets/unchain.png"
+          alt="Unchain Logo"
+          height={60} width={60}
         />
       </div>
       <div className=" flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-8">

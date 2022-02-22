@@ -1,19 +1,4 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+import Image from "next/image";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { SearchIcon } from "@heroicons/react/solid";
@@ -32,10 +17,11 @@ export default function NavigationBar() {
             <div className="flex justify-between h-16">
               <div className="flex px-2 lg:px-0">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block h-8 w-auto"
-                    src="/assets/planet-scale.svg"
-                    alt="Workflow"
+                  <Image
+                    className="block h-8 w-8"
+                    src="/assets/unchain.png"
+                    alt="Unchain Logo"
+                    height={60} width={60}
                   />
                 </div>
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">

@@ -1,8 +1,5 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
-
 @tailwind utilities;
 
 /* body {
@@ -11,46 +8,55 @@
 } */
 
 .button {
-  @apply inline-flex px-2.5 py-1.5 text-xs text-center items-center justify-center border border-transparent font-medium shadow-sm text-white bg-black focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-gray-800;
-  @apply disabled:bg-opacity-80;
-  @apply rounded-md;
+    @apply inline-flex px-2.5 py-1.5 text-xs text-center items-center justify-center border border-transparent font-medium shadow-sm text-white bg-info-700 focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-gray-800;
+    @apply disabled:bg-opacity-80;
+    @apply rounded-md;
 }
 
 .button__round {
-  @apply rounded-full !important;
+    @apply rounded-full !important;
 }
 
 .button__secondary {
-  @apply bg-white text-black;
-  @apply border border-gray-400;
+    @apply bg-white text-black;
+    @apply border border-gray-400 mx-auto;
 }
 
 .button__third {
-  @apply bg-black text-white;
+    @apply bg-black text-white;
 }
 
 .button__sm {
-  @apply px-2.5 py-1.5 text-xs;
+    @apply px-4 py-1.5 text-xs;
 }
 
 .button__md {
-  @apply px-3 py-2 text-sm;
+    @apply px-6 py-2 text-sm;
 }
 
 .button__lg {
-  @apply px-4 py-2 text-sm;
+    @apply px-8 py-2 text-sm;
 }
 
 .button__xl {
-  @apply px-6 py-3 text-base;
+    @apply px-12 py-3 text-base;
 }
 
 blockquote {
-  @apply bg-gray-200;
-  @apply my-6 p-2;
-  @apply overflow-auto break-words;
+    @apply bg-neutral-600;
+    @apply text-neutral-200;
+    @apply my-6 p-2;
+    @apply overflow-auto break-words;
+}
+
+h1 {
+    @apply text-neutral-200 text-3xl font-bold;
 }
 
 a {
-  @apply text-blue-300;
+    @apply text-blue-300;
+}
+
+p {
+    @apply text-neutral-200;
 }

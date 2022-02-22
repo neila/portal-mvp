@@ -5,6 +5,7 @@ import { UserIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import classNames from "classnames";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigation = [
   { name: "Users", href: "#", current: true },
@@ -24,10 +25,11 @@ const AdminLayout = (props) => {
                   className="px-4 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 "
                   onClick={() => true}
                 >
-                  <img
+                  <Image
                     className="h-8 w-8 mx-auto"
-                    src="/assets/planet-scale.svg"
-                    alt="PlanetScale Logo"
+                    src="/assets/unchain.png"
+                    alt="Unchain Logo"
+                    height={60} width={60}
                   />
                 </button>
                 <div className="flex-1 flex"></div>
