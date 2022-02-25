@@ -18,7 +18,7 @@ const AdminLayout = (props) => {
             <div className="min-h-full">
                 <div className="flex flex-col flex-1">
                     <div className="border-b">
-                        <div className="relative flex-shrink-0 flex h-16 bg-white">
+                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-600">
                             <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <button
                                     type="button"
@@ -85,7 +85,7 @@ const AdminLayout = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex-shrink-0 flex h-16 bg-white">
+                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-300">
                             <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <div className="flex flex-1 ">
                                     {navigation.map((item) => (

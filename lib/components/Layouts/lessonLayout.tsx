@@ -8,7 +8,7 @@ import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-const AppLayout = (props) => {
+const LessonLayout = (props) => {
     const { status, data: session } = useSession({
         required: false,
     })
@@ -47,10 +47,10 @@ const AppLayout = (props) => {
 
     return (
         <>
-            <div className="min-h-screen bg-neutral-600">
+            <div className="min-h-screen bg-neutral-200">
                 <div className="flex flex-col flex-1">
                     <div className="border-b">
-                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-600">
+                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-200">
                             <div className="flex-1 px-4 flex mt-1 justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <button
                                     type="button"
@@ -68,7 +68,7 @@ const AppLayout = (props) => {
                                 <div className="ml-4 flex items-center md:ml-6">
                                     <Menu as="div" className="ml-3 relative">
                                         <div>
-                                            <Menu.Button className="max-w-xs bg-gray-100 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 p-2 lg:rounded-md lg:hover:bg-gray-50">
+                                            <Menu.Button className="max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 p-2 lg:rounded-md lg:hover:bg-gray-50">
                                                 {session?.user?.image ? (
                                                     <img
                                                         className="h-6 w-6 rounded-full"
@@ -143,7 +143,7 @@ const AppLayout = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-600">
+                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-200">
                             <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <div className="flex flex-1">
                                     {status !== 'authenticated' ? (
@@ -153,7 +153,7 @@ const AppLayout = (props) => {
                                                     className={classNames(
                                                         item.href === currentPath
                                                             ? 'border-b border-indigo-600 text-white'
-                                                            : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
+                                                            : ' hover:border-b  hover:border-gray-200 text-neutral-500 ',
                                                         'group flex items-center px-2 py-2 leading-6 font-medium'
                                                     )}
                                                     aria-current={
@@ -173,7 +173,7 @@ const AppLayout = (props) => {
                                                     className={classNames(
                                                         item.href === currentPath
                                                             ? 'border-b border-indigo-600 text-white'
-                                                            : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
+                                                            : ' hover:border-b  hover:border-info-300 text-neutral-500 ',
                                                         'group flex items-center px-2 py-2 leading-6 font-medium'
                                                     )}
                                                     aria-current={
@@ -192,16 +192,18 @@ const AppLayout = (props) => {
                         </div>
                     </div>
                     <main className="flex-1 pb-8">
-                        <div className="bg-neutral-600">
-                            <div className="px-4 mobile:px-6 laptop:max-w-6xl lg:px-8">
-                                <div className="pt-6 pb-2 tablet:flex tablet:items-center tablet:justify-between">
+                        <div className="bg-neutral-200">
+                            <div className="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+                                <div className="pt-6 pb-2 md:flex md:items-center md:justify-between">
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center">
                                             <div>
-                                                <div className="flex items-center">
-                                                    <h1 className="text-base laptop:text-xl font-bold leading-7 text-neutral-400 sm:leading-9 sm:truncate">
-                                                        {props.title}
-                                                    </h1>
+                                                <div className="flex flex-col items-center">
+                                                    <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full">
+                                                        <Link href={ `/projects/${encodeURIComponent(props.title)}/ `}> 
+                                                            <a className="text-neutral-700 text-lg font-bold">Back to project overview</a>
+                                                        </Link>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -210,7 +212,7 @@ const AppLayout = (props) => {
                             </div>
                         </div>
 
-                        <div className="mt-2">
+                        <div className="mt-2 bg-neutral-200">
                             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                                 {props.children}
                             </div>
@@ -222,4 +224,4 @@ const AppLayout = (props) => {
     )
 }
 
-export default AppLayout
+export default LessonLayout

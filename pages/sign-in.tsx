@@ -136,7 +136,7 @@ export default function Page({ csrfToken, providers }) {
                                 </button>
                             </div>
                         </form>
-                        <section className="mt-8 text-center">
+                        {/* <section className="mt-8 text-center">
                             <div className="flex flex-col mb-8">
                                 <hr className="h-0 border-t mt-1" />
                                 <div className="-mt-3 text-sm text-center">
@@ -168,7 +168,7 @@ export default function Page({ csrfToken, providers }) {
                                     )
                                 })}
                             </div>
-                        </section>
+                        </section> */}
                     </div>
                 </div>
             </div>
