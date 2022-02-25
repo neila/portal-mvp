@@ -98,9 +98,8 @@ export async function getStaticPaths() {
     
     const allProjects = await getProjects()
 
-    const lessonsFormat = await Promise.all(allProjects.map(async(p) => {
+    const lessonsFormat = await Promise.all(allProjects.map(async(p, i) => {
         const project = await getSections(p.name)
-
         const section = await Promise.all(project.map(async(s) => {
             const lessons = await getLessons(p.name, s.name)
             const lesson = lessons.map((l) => {
