@@ -8,7 +8,7 @@ export default function project({ projectView, lessonView, thisLessonContent, ai
     <div className="mt-4 text-white space-y-2">
         <p>*********************************************************</p>
         <p className="">ここまでプロジェクトを完成させ、deployすることができたら、
-        <Link href="https://airtable.com/shrf1cCtTx0iQuszX"><a target="_blank"> こちら </a></Link>
+        <Link href="https://airtable.com/shrf1cCtTx0iQuszX"><a target="_blank" rel="noreferrer"> こちら </a></Link>
         のairtableのフォームを記入してください！プロジェクト完了を証明するNFTを発行します！</p>
     </div>
     ) : null
