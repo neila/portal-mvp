@@ -31,7 +31,7 @@ const Page = () => {
     console.log(withSessionQuery)
 
     const router = useRouter()
-    if (session) { router.push(`/home`) } else { router.push(`/`)}
+    router.push(session ? '/home' : '/')
 
 
     return (
@@ -40,7 +40,7 @@ const Page = () => {
                 <div>
                     <h1>
                         Hello, {session.user.name ?? session.user.email} This is
-                        a protected route. You can see it because you're logged
+                        a protected route. You can see it because you&apos;re logged
                         in.
                     </h1>
                 </div>

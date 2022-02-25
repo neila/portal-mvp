@@ -5,6 +5,7 @@ import Head from 'next/head'
 import React from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
+import Link from 'next/link'
 
 const MINIMUM_ACTIVITY_TIMEOUT = 850
 type LoginFormValues = {
@@ -47,7 +48,7 @@ export default function Page({ csrfToken, providers }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="sm:mx-auto sm:w-full sm:max-w-md text-center py-12">
-                <a href="/">
+                <Link href="/">
                     <Image
                         className="h-16 w-16 mx-auto"
                         src="/assets/unchain.png"
@@ -55,7 +56,7 @@ export default function Page({ csrfToken, providers }) {
                         height={60}
                         width={60}
                     />
-                </a>
+                </Link>
             </div>
             <div className=" flex flex-col justify-center sm:px-6 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">

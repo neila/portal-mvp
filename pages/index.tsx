@@ -14,17 +14,17 @@ const Page = () => {
         return <Loader />
     }
 
-    if (session) { Router.push(`/home`) }
+    Router.push(session ? "/home" : "/")
 
     return (
         <>
             <AppLayout title="Auth">
                 {/* <blockquote> */}
-                <h1>Welcome to UNCHAIN developer's portal!</h1>
+                <h1>Welcome to UNCHAIN developer&apos;s portal!</h1>
 
                 <blockquote>
                     <p>
-                        Seems like you're still not logged in. Please 
+                        Seems like you&apos;re still not logged in. Please 
                         <button type="button" onClick={() => signIn()}> &nbsp;<a>login</a>&nbsp; </button> 
                         to continue.
                     </p>

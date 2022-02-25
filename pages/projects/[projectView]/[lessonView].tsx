@@ -24,8 +24,8 @@ export default function project({ projectView, lessonView, thisLessonContent, ai
                 </h2>
             </div>
             <div className="mb-24">
-                <ReactMarkdown children={thisLessonContent} remarkPlugins={[remarkGfm]} 
-                transformImageUri={uri => uri.startsWith('http') ? uri: `https://raw.githubusercontent.com/shiftbase-xyz/UNCHAIN-projects/main${uri}`} />
+                <ReactMarkdown remarkPlugins={[remarkGfm]} 
+                transformImageUri={uri => uri.startsWith('http') ? uri: `https://raw.githubusercontent.com/shiftbase-xyz/UNCHAIN-projects/main${uri}`} >{thisLessonContent}</ReactMarkdown>
                 {airTable}
             </div>
         </LessonLayout>

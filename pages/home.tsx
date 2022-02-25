@@ -64,8 +64,8 @@ const Page = ({ projects, projDescripts  }) => {
                         {
                             projects.map( ({ name, type, path, url}, i) => (
                                 (name === projDescripts[i][0]) ? 
-                                (<div className="rounded-md align-middle p-3 cursor-pointer border-2 border-info-400 hover:border-yellow-500">
-                                    <Link href={`/projects/${encodeURIComponent(name)}`}>
+                                (<div key={name} className="rounded-md align-middle p-3 cursor-pointer border-2 border-info-400 hover:border-yellow-500">
+                                    <Link href={`/projects/${encodeURIComponent(name)}`} passHref={true}>
                                         <div className="space-y-2">
                                             <h2 className="cardtitle">{name}</h2>
                                             {/* <div>{projImages}</div> */}

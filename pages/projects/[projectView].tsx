@@ -12,7 +12,7 @@ export default function project({ projname, sections, lessons }){
                         <></>
                         ) : (
                         <blockquote>
-                            <h2><span className="text-2xl lg:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-400">
+                            <h2 key={s.name}><span className="text-2xl lg:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-400">
                                 {s.name}
                             </span></h2>
                             <div className="">
@@ -28,7 +28,7 @@ export default function project({ projname, sections, lessons }){
                                         const pagePath = s.name+"-"+lessonPath
                                         
                                         return(
-                                            <div className="my-2">
+                                            <div key={l.name} className="my-2">
                                                 <Link href={ `/projects/${encodeURIComponent(projname)}/${encodeURIComponent(pagePath)}`}>
                                                     <a className="cursor-pointer ">
                                                         <div className="text-white hover:text-info-300">{displayName}</div>

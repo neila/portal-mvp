@@ -70,7 +70,7 @@ const AppLayout = (props) => {
                                         <div>
                                             <Menu.Button className="max-w-xs bg-gray-100 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 p-2 lg:rounded-md lg:hover:bg-gray-50">
                                                 {session?.user?.image ? (
-                                                    <img
+                                                    <Image
                                                         className="h-6 w-6 rounded-full"
                                                         src={session.user.image}
                                                         alt="PlanetScale Logo"
