@@ -11,7 +11,7 @@
     blockquote {
         @apply text-neutral-100;
         @apply my-6 p-2 rounded-md;
-        @apply overflow-auto break-words;
+        @apply overflow-auto break-words indent-0	;
     }
 
     h1 {
@@ -47,7 +47,7 @@
     }
     
     li {
-        @apply text-neutral-400 leading-10 list-disc;
+        @apply text-neutral-400 leading-10 list-disc list-inside;
     }
 }
 
