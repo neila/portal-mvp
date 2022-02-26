@@ -15,7 +15,13 @@ export default function Custom404() {
     console.log(status, session)
 
     const router = useRouter()
-    router.push(session ? "/home" : "/")
+
+    if(!session){
+        router.push('/')
+        return null
+    }
+
+    router.push('/home')
 
     return null
     

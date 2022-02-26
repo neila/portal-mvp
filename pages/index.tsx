@@ -14,7 +14,10 @@ const Page = () => {
         return <Loader />
     }
 
-    Router.push(session ? "/home" : "/")
+    if(session){
+        Router.push('/home')
+        return null
+    }
 
     return (
         <>

@@ -13,8 +13,12 @@ const Page = () => {
         return <Loader />
     }
 
-    // if (session) { Router.push(`/home`) }
-    if (session) { router.push(`/home`) } else { router.push(`/`) }
+    if (session) {
+        router.push(`/home`)
+        return null
+    }
+
+    router.push(`/`)
 
     return (
         <>

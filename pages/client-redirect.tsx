@@ -16,7 +16,12 @@ const Page = () => {
         return 'Loading or not authenticated...'
     }
 
-    if (session) { router.push(`/home`) } else { router.push(`/`) }
+    if (session) {
+        router.push(`/home`)
+        return null
+    }
+    
+    router.push(`/`)
     return (
         <>
             <AppLayout title="Client Redirect">

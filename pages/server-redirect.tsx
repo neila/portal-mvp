@@ -31,8 +31,12 @@ const Page = () => {
     console.log(withSessionQuery)
 
     const router = useRouter()
-    router.push(session ? '/home' : '/')
+    if(!session){
+        router.push('/')
+        return null
+    }
 
+    router.push('/home')
 
     return (
         <>
