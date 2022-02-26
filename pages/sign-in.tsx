@@ -6,6 +6,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
+import { useState, useRef } from 'react'
 
 const MINIMUM_ACTIVITY_TIMEOUT = 850
 type LoginFormValues = {
@@ -39,6 +40,54 @@ export default function Page({ csrfToken, providers }) {
             //   setError(error)
             setSubmitting(false)
         }
+    }
+
+    const [pass, setPass] = useState('')
+
+    const pwRef = useRef(null)
+    const letterRef = useRef(null)
+    const capitalRef = useRef(null)
+    const numberRef = useRef(null)
+    const lengthRef = useRef(null)
+
+    const lowerCaseLetters = /[a-z]/g;
+    const upperCaseLetters = /[A-Z]/g;
+    const numbers = /[0-9]/g;
+
+    const handleOnChange = (e) => {
+
+        setPass(e.target.value)
+
+        let currString = e.target.value
+
+        //check lowercase match
+        if (currString.match(lowerCaseLetters)){
+            letterRef.current.className = 'valid'
+        } else {
+            letterRef.current.className = 'invalid'
+        }
+
+        //check uppercase match
+        if (currString.match(upperCaseLetters)){
+            capitalRef.current.className = 'valid'
+        } else {
+            capitalRef.current.className = 'invalid'
+        }
+
+        //check number match
+        if (currString.match(numbers)){
+            numberRef.current.className = 'valid'
+        } else {
+            numberRef.current.className = 'invalid'
+        }
+
+        //check length match
+        if (currString.length >= 8){
+            lengthRef.current.className = 'valid'
+        } else {
+            lengthRef.current.className = 'invalid'
+        }
+
     }
 
     return (
@@ -99,7 +148,6 @@ export default function Page({ csrfToken, providers }) {
                                     />
                                 </div>
                             </div>
-
                             <div>
                                 <div className="mt-8">
                                     <label
@@ -115,13 +163,26 @@ export default function Page({ csrfToken, providers }) {
                                         name="password"
                                         type="password"
                                         autoComplete="current-password"
-                                        minLength={12}
+                                        minLength={8}
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                         required
                                         {...register('password')}
                                         className="appearance-none w-full font-medium py-3 border-b border-t-0 border-l-0 border-r-0 border-dashed outline-none text-xl text-center leading-6 bg-transparent placeholder-neutral-400 focus:outline-none focus:placeholder-neutral-200 text-neutral-100 transition duration-150 ease-in-out"
+                                        ref={pwRef}
+                                        value={pass}
+                                        onChange={handleOnChange}
                                     />
                                 </div>
-                            </div>
+                                <div id="message">
+                                    <div className="text-white">{pass}</div>
+                                    <h3>Password must contain the following:</h3>
+                                        <p ref={letterRef} className="invalid">A <b>lowercase</b> letter</p>
+                                        <p ref={capitalRef} className="invalid">A <b>capital (uppercase)</b> letter</p>
+                                        <p ref={numberRef} className="invalid">A <b>number</b></p>
+                                        <p ref={lengthRef} className="invalid">Minimum <b>8 characters</b></p>
+                                    </div>
+                                </div>
 
                             <div className="mt-6 space-y-2 flex justify-center">
                                 <button

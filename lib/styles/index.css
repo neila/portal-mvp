@@ -86,6 +86,12 @@
     .button__xl {
         @apply px-12 py-3 text-base;
     }
+    .valid{
+        @apply text-success-400;
+    }
+    .invalid{
+        @apply text-warning-500
+    }
     .card {
         @apply rounded-lg aspect-auto drop-shadow-xl p-2;
     }
