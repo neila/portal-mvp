@@ -39,7 +39,7 @@ const Page = ({ projects, projDescripts  }) => {
         return (
             <>
                 <AppLayout title="Home">
-                    <blockquote>
+                    <div className="my-6 p-2">
                         <h1>Access Denied</h1>
                         <h1>
                             <button type="button" onClick={() => signIn()}>
@@ -47,7 +47,7 @@ const Page = ({ projects, projDescripts  }) => {
                             </button>
                             to see a secret message
                         </h1>
-                    </blockquote>
+                    </div>
                 </AppLayout>
             </>
         )
@@ -60,7 +60,7 @@ const Page = ({ projects, projDescripts  }) => {
                     <h1>
                         Projects
                     </h1>
-                    <blockquote className="grid grid-cols-1 laptop:grid-cols-3 gap-16">
+                    <div className="grid grid-cols-1 laptop:grid-cols-3 gap-16 my-6 p-2">
                         {
                             projects.map( ({ name, type, path, url}, i) => (
                                 (name === projDescripts[i][0]) ? 
@@ -75,7 +75,7 @@ const Page = ({ projects, projDescripts  }) => {
                                 </div>) : null
                             ))
                         }
-                    </blockquote>
+                    </div>
                     {/* {withSessionQuery?.data && <p>{withSessionQuery.data}</p>} */}
                 </div>
             </AppLayout>

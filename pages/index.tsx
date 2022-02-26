@@ -22,16 +22,15 @@ const Page = () => {
     return (
         <>
             <AppLayout title="Auth">
-                {/* <blockquote> */}
                 <h1>Welcome to UNCHAIN developer&apos;s portal!</h1>
 
-                <blockquote>
+                <div className="my-6 p-2">
                     <p>
                         Seems like you&apos;re still not logged in. Please 
                         <button type="button" onClick={() => signIn()}> &nbsp;<a>login</a>&nbsp; </button> 
                         to continue.
                     </p>
-                </blockquote>
+                </div>
             </AppLayout>
         </>
     )

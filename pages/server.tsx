@@ -17,7 +17,7 @@ const Page = () => {
     return (
         <>
             <AppLayout title="Server">
-                <blockquote>
+                <div className="my-6 p-2">
                     <p>
                         This page uses the universal getSession() method in
                         getServerSideProps().
@@ -45,7 +45,7 @@ const Page = () => {
                         But in this case the session is <strong>not</strong>{' '}
                         available on the first render.
                     </p>
-                </blockquote>
+                </div>
             </AppLayout>
         </>
     )

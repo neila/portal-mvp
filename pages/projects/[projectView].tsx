@@ -11,7 +11,7 @@ export default function project({ projname, sections, lessons }){
                         (
                         <></>
                         ) : (
-                        <blockquote>
+                        <div className="">
                             <h2 key={s.name}><span className="text-2xl lg:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-400">
                                 {s.name}
                             </span></h2>
@@ -40,7 +40,7 @@ export default function project({ projname, sections, lessons }){
                                 }
 
                             </div>
-                        </blockquote>
+                        </div>
                         )
                     )
                 })

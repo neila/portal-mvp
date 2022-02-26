@@ -48,14 +48,14 @@ const Page = () => {
                         in.
                     </h1>
                 </div>
-                <blockquote>
+                <div className="my-6 p-2">
                     <p>This page is protected using Page.auth = true</p>
                     <p>Either way works.</p>
                     <p>
                         But in this case the session is available on the first
                         render.
                     </p>
-                </blockquote>
+                </div>
             </AppLayout>
         </>
     )

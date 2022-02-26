@@ -32,7 +32,7 @@ const Page = () => {
                         in.
                     </h1>
                 </div>
-                <blockquote>
+                <div className="my-6 p-2">
                     Client Side Rendering This page uses the useSession() React
                     Hook. The useSession() React Hook is easy to use and allows
                     pages to render very quickly. The advantage of this approach
@@ -40,15 +40,15 @@ const Page = () => {
                     Provider in _app.js so that navigation between pages using
                     useSession() is very fast. The disadvantage of useSession()
                     is that it requires client side JavaScript.
-                </blockquote>
-                <blockquote>
+                </div>
+                <div className="my-6 p-2">
                     <p>This page is protected using the useSession hook.</p>
                     <p>Either way works.</p>
                     <p>
                         But in this case the session is <strong>not</strong>{' '}
                         available on the first render.
                     </p>
-                </blockquote>
+                </div>
             </AppLayout>
         </>
     )

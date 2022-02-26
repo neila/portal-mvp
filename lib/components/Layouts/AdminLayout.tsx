@@ -22,7 +22,7 @@ const AdminLayout = (props) => {
                             <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <button
                                     type="button"
-                                    className="px-4 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 "
+                                    className="px-4 text-neutral-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 "
                                     onClick={() => true}
                                 >
                                     <Image
@@ -40,14 +40,14 @@ const AdminLayout = (props) => {
                                         <div>
                                             <Menu.Button className="max-w-xs bg-gray-100 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 p-2 lg:rounded-md lg:hover:bg-gray-50">
                                                 <UserIcon className="h-6 w-6 rounded-full" />
-                                                <span className="hidden  text-gray-700 text-sm font-medium lg:block">
+                                                <span className="hidden  text-neutral-700 text-sm font-medium lg:block">
                                                     <span className="sr-only">
                                                         Open user menu for{' '}
                                                     </span>
                                                     {/* {user.name ?? user.email} */}
                                                 </span>
                                                 <ChevronDownIcon
-                                                    className="flex-shrink-0 h-5 w-5 text-gray-400"
+                                                    className="flex-shrink-0 h-5 w-5 text-neutral-400"
                                                     aria-hidden="true"
                                                 />
                                             </Menu.Button>
@@ -72,7 +72,7 @@ const AdminLayout = (props) => {
                                                                 active
                                                                     ? 'bg-gray-100'
                                                                     : '',
-                                                                'block px-4 py-2 text-sm text-gray-700'
+                                                                'block px-4 py-2 text-sm text-neutral-700'
                                                             )}
                                                         >
                                                             Logout
@@ -94,7 +94,7 @@ const AdminLayout = (props) => {
                                                 className={classNames(
                                                     item.current
                                                         ? 'border-b text-black'
-                                                        : ' hover:border-b  hover:border-gray-200 text-gray-600 ',
+                                                        : ' hover:border-b  hover:border-gray-200 text-neutral-600 ',
                                                     'group flex items-center px-2 py-2 text-sm leading-6 font-medium'
                                                 )}
                                                 aria-current={
@@ -119,7 +119,7 @@ const AdminLayout = (props) => {
                                         <div className="flex items-center">
                                             <div>
                                                 <div className="flex items-center">
-                                                    <h1 className="text-xl font-bold leading-7 text-gray-900 sm:leading-9 sm:truncate">
+                                                    <h1 className="text-xl font-bold leading-7 text-neutral-900 sm:leading-9 sm:truncate">
                                                         {props.title}
                                                     </h1>
                                                 </div>

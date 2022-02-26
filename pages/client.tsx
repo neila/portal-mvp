@@ -23,7 +23,7 @@ const Page = () => {
     return (
         <>
             <AppLayout title="Client">
-                <blockquote>
+                <div className="my-6 p-2">
                     <p>This page uses the useSession() React Hook.</p>
 
                     <p>
@@ -48,7 +48,7 @@ const Page = () => {
                         But in this case the session is <strong>not</strong>{' '}
                         available on the first render.
                     </p>
-                </blockquote>
+                </div>
             </AppLayout>
         </>
     )

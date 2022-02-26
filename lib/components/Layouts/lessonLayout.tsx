@@ -54,7 +54,7 @@ const LessonLayout = (props) => {
                             <div className="flex-1 px-4 flex mt-1 justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <button
                                     type="button"
-                                    className="px-4 text-gray-400 focus:outline-none"
+                                    className="px-4 text-neutral-400 focus:outline-none"
                                 >
                                     <Image
                                         className="h-8 w-8 mx-auto"
@@ -79,13 +79,13 @@ const LessonLayout = (props) => {
                                                     <UserIcon className="h-6 w-6 rounded-full" />
                                                 )}
 
-                                                <span className="hidden  text-gray-700 text-sm font-medium lg:block">
+                                                <span className="hidden  text-neutral-600 text-sm font-medium lg:block">
                                                     <span className="sr-only">
                                                         Open user menu for{' '}
                                                     </span>
                                                 </span>
                                                 <ChevronDownIcon
-                                                    className="flex-shrink-0 h-5 w-5 text-gray-400"
+                                                    className="flex-shrink-0 h-5 w-5 text-neutral-400"
                                                     aria-hidden="true"
                                                 />
                                             </Menu.Button>
@@ -111,7 +111,7 @@ const LessonLayout = (props) => {
                                                                     active
                                                                         ? 'bg-gray-100'
                                                                         : '',
-                                                                    'block px-4 py-2 text-sm text-gray-700'
+                                                                    'block px-4 py-2 text-sm text-neutral-600'
                                                                 )}
                                                             >
                                                                 Sign Out
@@ -129,7 +129,7 @@ const LessonLayout = (props) => {
                                                                     active
                                                                         ? 'bg-gray-100'
                                                                         : '',
-                                                                    'block px-4 py-2 text-sm text-gray-700'
+                                                                    'block px-4 py-2 text-sm text-neutral-600'
                                                                 )}
                                                             >
                                                                 Sign In
@@ -201,7 +201,7 @@ const LessonLayout = (props) => {
                                                 <div className="flex flex-col items-center">
                                                     <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full">
                                                         <Link href={ `/projects/${encodeURIComponent(props.title)}/ `}> 
-                                                            <a className="text-neutral-700 text-lg font-bold">Back to project overview</a>
+                                                            <a className="text-neutral-600 text-lg font-bold">Back to project overview</a>
                                                         </Link>
                                                     </div>
                                                 </div>
