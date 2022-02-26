@@ -12,4 +12,3 @@ https://github.com/neila \
 - Auth - [NextAuth.js](https://next-auth.js.org/)
 - Database - [PlanetScale](https://planetscale.com)
 - ORM - [Prisma](https://prisma.io)
-- Hosting - [Netlify](https://netlify.com)
