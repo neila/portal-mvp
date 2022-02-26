@@ -121,7 +121,7 @@ export default function Page({ csrfToken }) {
                                     {isSubmitting ? (
                                         <img src="/assets/loading.svg" />
                                     ) : (
-                                        <p>Sign In</p>
+                                        <p className="text-white">Sign In</p>
                                     )}
                                 </button>
                             </div>
