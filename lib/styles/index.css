@@ -45,6 +45,10 @@
     p {
         @apply text-neutral-400 leading-10;
     }
+    
+    li {
+        @apply text-neutral-400 leading-10 list-disc;
+    }
 }
 
 
