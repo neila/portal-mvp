@@ -180,8 +180,8 @@ export default function Page({ csrfToken, providers }) {
                                         <p ref={capitalRef} className="invalid">A <b>capital (uppercase)</b> letter</p>
                                         <p ref={numberRef} className="invalid">A <b>number</b></p>
                                         <p ref={lengthRef} className="invalid">Minimum <b>8 characters</b></p>
-                                    </div>
                                 </div>
+                            </div>
 
                             <div className="mt-6 space-y-2 flex justify-center">
                                 <button
