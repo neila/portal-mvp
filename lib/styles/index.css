@@ -9,7 +9,7 @@
 
 @layer base {
     blockquote {
-        @apply text-neutral-100 indent-0;
+        @apply text-neutral-100;
         @apply my-6 p-2 rounded-md;
         @apply overflow-auto break-words;
     }
