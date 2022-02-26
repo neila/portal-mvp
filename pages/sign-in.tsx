@@ -174,8 +174,7 @@ export default function Page({ csrfToken, providers }) {
                                         onChange={handleOnChange}
                                     />
                                 </div>
-                                <div id="message">
-                                    <div className="text-white">{pass}</div>
+                                <div id="message" className="mt-4">
                                     <h3>Password must contain the following:</h3>
                                         <p ref={letterRef} className="invalid">A <b>lowercase</b> letter</p>
                                         <p ref={capitalRef} className="invalid">A <b>capital (uppercase)</b> letter</p>
