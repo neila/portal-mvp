@@ -27,14 +27,13 @@
 
     code {
         @apply bg-neutral-500 text-gray-300;
-        @apply py-1 px-2;
+        @apply py-1 px-1;
         @apply rounded;
-        @apply overflow-x-auto
     }
 
     pre {
         @apply bg-neutral-500 text-gray-300;
-        @apply py-1 px-2;
+        @apply py-1 px-1 overflow-x-auto;
         @apply rounded;
     }
 
