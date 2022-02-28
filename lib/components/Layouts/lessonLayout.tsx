@@ -215,22 +215,18 @@ const LessonLayout = (props) => {
                                 <div className="pt-6 pb-2 md:flex md:items-center md:justify-between">
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center">
-                                            <div>
-                                                <div className="flex flex-col items-center">
-                                                    <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full">
-                                                        <Link
-                                                            href={`/projects/${encodeURIComponent(
-                                                                props.title
-                                                            )}/ `}
-                                                        >
-                                                            <a className="text-neutral-600 text-lg font-bold">
-                                                                Back to project
-                                                                overview
-                                                            </a>
-                                                        </Link>
-                                                    </div>
-                                                </div>
+
+                                            {/* back to portal */}
+                                            <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full">
+                                                <Link
+                                                    href={`/projects/${encodeURIComponent(props.title)}/ `}
+                                                >
+                                                    <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                                                        Back to project overview
+                                                    </a>
+                                                </Link>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>

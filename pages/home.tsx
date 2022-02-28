@@ -3,10 +3,11 @@ import { useSession, signIn } from 'next-auth/react'
 import { useQuery } from 'react-query'
 import superagent from 'superagent'
 import Link from 'next/link'
+import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-const Page = ({ projects, projDescripts }) => {
+const Page = ({ projects, projDescripts, projImages }) => {
     const { status, data: session } = useSession({
         required: true,
     })
@@ -60,23 +61,13 @@ const Page = ({ projects, projDescripts }) => {
                     <h1>Projects</h1>
                     <div className="grid grid-cols-1 laptop:grid-cols-3 gap-16 my-6 p-2">
                         {projects.map(({ name, type, path, url }, i) =>
-                            name === projDescripts[i][0] ? (
-                                <div
-                                    key={name}
-                                    className="rounded-md align-middle p-3 cursor-pointer border-2 border-info-400 hover:border-yellow-500"
-                                >
-                                    <Link
-                                        href={`/projects/${encodeURIComponent(
-                                            name
-                                        )}`}
-                                        passHref={true}
-                                    >
+                            ((name === projDescripts[i][0]) && (name == projImages[i][0])) ? (
+                                <div key={name} className="rounded-md align-middle p-3 cursor-pointer border-2 border-info-400 hover:border-yellow-500" >
+                                    <Link href={`/projects/${encodeURIComponent(name)}`} passHref={true}>
                                         <div className="space-y-2">
-                                            <h2 className="cardtitle">
-                                                {name}
-                                            </h2>
-                                            {/* <div>{projImages}</div> */}
-                                            <ReactMarkdown>
+                                            {/* <h2 className="cardtitle"> {name} </h2> */}
+                                            <Image src={projImages[i][1]} width={200} height={200}/>
+                                            <ReactMarkdown remarkPlugins={[remarkGfm]} transformImageUri={(uri) => uri.startsWith('http') ? uri : `https://raw.githubusercontent.com/shiftbase-xyz/UNCHAIN-projects/main${uri}`}>
                                                 {projDescripts[i][1]}
                                             </ReactMarkdown>
                                         </div>
@@ -139,24 +130,20 @@ export const getStaticProps = async () => {
     ).filter(Boolean)
 
     // get Images
-    // const projImages = (await Promise.all(projects.map(async(p, i) => {
-    //     const imURL = (await fetch (`https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents/public/images/${p.name}/README`,
-    //     {
-    //         headers: { "Authorization": "token " + process.env.GITHUB_AUTH_TOKEN }
-    //     }).then(res => res.json()))[0].download_url
+    const projImages = (await Promise.all(projects.map(async(p, i) => {
+        const imURL = (await fetch (`https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents/public/squares/${p.name}/square.png`,
+        {
+            headers: { "Authorization": "token " + process.env.GITHUB_AUTH_TOKEN }
+        }).then(res => res.json())).download_url
 
-    //     const im = await fetch(imURL).then(
-    //         res => res.blob()
-    //     ).then(blob => {const b64 = blob.text(); return ("data:" + blob.type + ";base64", b64)})
-
-    //     console.log(im)
-    //     return ([p.name, im])
-    // }))).filter(Boolean)
+        return ([p.name, imURL])
+    }))).filter(Boolean)
 
     return {
         props: {
             projects,
             projDescripts,
+            projImages,
         },
     }
 }

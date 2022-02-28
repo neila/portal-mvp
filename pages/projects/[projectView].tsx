@@ -33,9 +33,7 @@ export default function project({ projname, sections, lessons }) {
                                 return (
                                     <div key={l.name} className="my-2">
                                         <Link
-                                            href={`/projects/${encodeURIComponent(
-                                                projname
-                                            )}/${encodeURIComponent(pagePath)}`}
+                                            href={`/projects/${encodeURIComponent(projname)}/${encodeURIComponent(pagePath)}`}
                                         >
                                             <a className="cursor-pointer ">
                                                 <div className="text-white hover:text-info-300">

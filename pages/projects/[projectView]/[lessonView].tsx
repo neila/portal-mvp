@@ -7,6 +7,7 @@ export default function project({
     projectView,
     lessonView,
     thisLessonContent,
+    nextLessonPath,
     airTableFlag,
 }) {
     const airTable = airTableFlag ? (
@@ -35,7 +36,7 @@ export default function project({
                     {lessonView}
                 </h2>
             </div>
-            <div className="mb-24 prose">
+            <div className="mb-8">
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     transformImageUri={(uri) =>
@@ -47,13 +48,39 @@ export default function project({
                     {thisLessonContent}
                 </ReactMarkdown>
                 {airTable}
+
+                <div className="mt-4 flex flex-row justify-between items-center">
+                    {/* back to portal */}
+                    <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full">
+                        <Link
+                            href={`/projects/${encodeURIComponent(projectView)}/ `}
+                        >
+                            <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                                Back to project overview
+                            </a>
+                        </Link>
+                    </div>
+
+                    {/* next button */}
+                    {  
+                        nextLessonPath ?  
+                        <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full">
+                            <Link href={`/projects/${nextLessonPath}/ `} >
+                                <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                                    Next lesson
+                                </a>
+                            </Link>
+                        </div> : 
+                        <div></div> 
+                    }
+                </div>
             </div>
         </LessonLayout>
     )
 }
 
 async function getProjects() {
-    // call github API endpoint to get projects
+    // call github API endpoint to get project directories
     const resProj = await fetch(
         'https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents',
         {
@@ -64,7 +91,7 @@ async function getProjects() {
     )
     const items = await resProj.json()
 
-    // get the paths we want to pre-render based on projects
+    // filter out non-project items
     const projects = items
         .map((i) => {
             if (i.type !== 'dir' || i.name === 'public') {
@@ -79,7 +106,7 @@ async function getProjects() {
 }
 
 async function getSections(project) {
-    // call github API endpoint to get projects
+    // call github API endpoint to get section directories
     const resSection = await fetch(
         `https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents${project}/ja`,
         {
@@ -90,6 +117,7 @@ async function getSections(project) {
     )
     const folders = await resSection.json()
 
+    // filter out non-section items
     const sections = folders
         .map((p) => {
             if (p.type !== 'dir' || p.name === 'public') {
@@ -104,7 +132,7 @@ async function getSections(project) {
 }
 
 async function getLessons(project, section) {
-    // call github API endpoint to get projects
+    // call github API endpoint to get lesson files
     const resLesson = await fetch(
         `https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents${project}/ja/${section}`,
         {
@@ -115,6 +143,7 @@ async function getLessons(project, section) {
     )
     const files = await resLesson.json()
 
+    // filter out non-lesson items
     const lessons = files
         .map((f) => {
             if (f.type !== 'file') {
@@ -129,14 +158,19 @@ async function getLessons(project, section) {
 }
 
 export async function getStaticPaths() {
+    // retrieve all projects
     const allProjects = await getProjects()
 
+    // retrieve all lessons for each project
     const lessonsFormat = await Promise.all(
         allProjects.map(async (p, i) => {
             const project = await getSections(p.name)
             const section = await Promise.all(
+
+                // for each project section obtain lessons
                 project.map(async (s) => {
                     const lessons = await getLessons(p.name, s.name)
+
                     const lesson = lessons.map((l) => {
                         const lessonPath = l.name
                             .match(/([^\_]*\_){2}/, '')[0]
@@ -144,13 +178,11 @@ export async function getStaticPaths() {
                             .replace('_', '')
                         const pagePath = s.name + '-' + lessonPath
                         const parameters = {
-                            params: {
-                                projectView: p.name,
-                                lessonView: pagePath,
-                            },
+                            params: { projectView: p.name, lessonView: pagePath },
                         }
                         return parameters
                     })
+
                     return lesson.flat()
                 })
             )
@@ -167,24 +199,22 @@ export async function getStaticProps({ params }) {
     const section = lessonView.match(/([^\-]*\-){2}/, '')[0].slice(0, -1)
     const sectionCount = (await getSections(projectView)).length - 1
 
-    const lessons = await getLessons(projectView, section)
-    const lessonCount = lessons.length - 1
+    const currentLessonIndex = parseInt(lessonView.slice(-1)) - 1
 
+    const lessons = await getLessons(projectView, section)
     const lessonContents = await Promise.all(
         lessons.map(async (l, i) => {
             const md = await fetch(l.download_url).then((res) => res.text())
-            const last =
-                i === lessons.length - 1 &&
-                sectionCount === parseInt(section.slice(-1))
-            return [md, last]
+            const isLast = (i === lessons.length - 1 && sectionCount === parseInt(section.slice(-1)))
+            return [md, isLast]
         })
     )
 
-    const thisLessonContent =
-        lessonContents[parseInt(lessonView.slice(-1)) - 1][0]
-    const airTableFlag = lessonContents[parseInt(lessonView.slice(-1)) - 1][1]
+    const thisLessonContent = lessonContents[currentLessonIndex][0]
+    const airTableFlag = lessonContents[currentLessonIndex][1]
+    const nextLessonPath = (currentLessonIndex === lessons.length - 1) ? null : `${projectView}/${(lessonView.slice(0,-1)+(currentLessonIndex + 2).toString())}`
 
     return {
-        props: { projectView, lessonView, thisLessonContent, airTableFlag },
+        props: { projectView, lessonView, thisLessonContent, nextLessonPath, airTableFlag },
     }
 }

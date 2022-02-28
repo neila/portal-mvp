@@ -22,4 +22,7 @@ module.exports = {
     typescript: {
         ignoreBuildErrors: true,
     },
+    images: {
+        domains: ['raw.githubusercontent.com'],
+    }
 }
