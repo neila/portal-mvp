@@ -142,7 +142,9 @@ export default function Page({ csrfToken }) {
                                     {isSubmitting ? (
                                         <img src="/assets/loading.svg" />
                                     ) : (
-                                        <p className="text-white">Create Account</p>
+                                        <p className="text-white">
+                                            Create Account
+                                        </p>
                                     )}
                                 </button>
                             </div>

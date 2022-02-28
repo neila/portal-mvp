@@ -1,9 +1,9 @@
 {
-  "extends": ["eslint:recommended", "next", "prettier"],
-  "rules": {
-    "no-unused-vars": "off",
-    "react/jsx-key": "off",
-    "react-hooks/rules-of-hooks": "off",
-    "no-useless-escape": "off"
-  }
+    "extends": ["eslint:recommended", "next", "prettier"],
+    "rules": {
+        "no-unused-vars": "off",
+        "react/jsx-key": "off",
+        "react-hooks/rules-of-hooks": "off",
+        "no-useless-escape": "off"
+    }
 }

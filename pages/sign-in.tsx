@@ -50,44 +50,42 @@ export default function Page({ csrfToken, providers }) {
     const numberRef = useRef(null)
     const lengthRef = useRef(null)
 
-    const lowerCaseLetters = /[a-z]/g;
-    const upperCaseLetters = /[A-Z]/g;
-    const numbers = /[0-9]/g;
+    const lowerCaseLetters = /[a-z]/g
+    const upperCaseLetters = /[A-Z]/g
+    const numbers = /[0-9]/g
 
     const handleOnChange = (e) => {
-
         setPass(e.target.value)
 
         let currString = e.target.value
 
         //check lowercase match
-        if (currString.match(lowerCaseLetters)){
+        if (currString.match(lowerCaseLetters)) {
             letterRef.current.className = 'valid'
         } else {
             letterRef.current.className = 'invalid'
         }
 
         //check uppercase match
-        if (currString.match(upperCaseLetters)){
+        if (currString.match(upperCaseLetters)) {
             capitalRef.current.className = 'valid'
         } else {
             capitalRef.current.className = 'invalid'
         }
 
         //check number match
-        if (currString.match(numbers)){
+        if (currString.match(numbers)) {
             numberRef.current.className = 'valid'
         } else {
             numberRef.current.className = 'invalid'
         }
 
         //check length match
-        if (currString.length >= 8){
+        if (currString.length >= 8) {
             lengthRef.current.className = 'valid'
         } else {
             lengthRef.current.className = 'invalid'
         }
-
     }
 
     return (
@@ -164,7 +162,7 @@ export default function Page({ csrfToken, providers }) {
                                         type="password"
                                         autoComplete="current-password"
                                         minLength={8}
-                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                         title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                         required
                                         {...register('password')}
@@ -175,11 +173,21 @@ export default function Page({ csrfToken, providers }) {
                                     />
                                 </div>
                                 <div id="message" className="mt-4">
-                                    <h3>Password must contain the following:</h3>
-                                        <p ref={letterRef} className="invalid">A <b>lowercase</b> letter</p>
-                                        <p ref={capitalRef} className="invalid">A <b>capital (uppercase)</b> letter</p>
-                                        <p ref={numberRef} className="invalid">A <b>number</b></p>
-                                        <p ref={lengthRef} className="invalid">Minimum <b>8 characters</b></p>
+                                    <h3>
+                                        Password must contain the following:
+                                    </h3>
+                                    <p ref={letterRef} className="invalid">
+                                        A <b>lowercase</b> letter
+                                    </p>
+                                    <p ref={capitalRef} className="invalid">
+                                        A <b>capital (uppercase)</b> letter
+                                    </p>
+                                    <p ref={numberRef} className="invalid">
+                                        A <b>number</b>
+                                    </p>
+                                    <p ref={lengthRef} className="invalid">
+                                        Minimum <b>8 characters</b>
+                                    </p>
                                 </div>
                             </div>
 

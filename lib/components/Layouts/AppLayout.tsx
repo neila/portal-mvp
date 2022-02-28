@@ -66,15 +66,22 @@ const AppLayout = (props) => {
                                 </button>
                                 <div className="flex-1 flex"></div>
                                 <div className="ml-4 flex items-center md:ml-6">
-                                    
-                                    {status == 'authenticated' ? (<div></div>) :
-                                        (<Menu as="div" className="ml-3 relative">
+                                    {status == 'authenticated' ? (
+                                        <div></div>
+                                    ) : (
+                                        <Menu
+                                            as="div"
+                                            className="ml-3 relative"
+                                        >
                                             <div>
                                                 <Menu.Button className="max-w-xs bg-gray-100 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 p-2 lg:rounded-md lg:hover:bg-gray-50">
                                                     {session?.user?.image ? (
                                                         <Image
                                                             className="h-6 w-6 rounded-full"
-                                                            src={session.user.image}
+                                                            src={
+                                                                session.user
+                                                                    .image
+                                                            }
                                                             alt="User Avatar"
                                                         />
                                                     ) : (
@@ -141,56 +148,63 @@ const AppLayout = (props) => {
                                                     )}
                                                 </Menu.Items>
                                             </Transition> */}
-                                        </Menu>)
-                                    }
-
+                                        </Menu>
+                                    )}
                                 </div>
                             </div>
                         </div>
                         <div className="relative flex-shrink-0 flex h-16 bg-neutral-600">
                             <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <div className="flex flex-1">
-                                    {status !== 'authenticated' ? (
-                                        NAV_AUTH.map((item) => (
-                                            <Link key={item.title} href={item.href}>
-                                                <a
-                                                    className={classNames(
-                                                        item.href === currentPath
-                                                            ? 'border-b border-indigo-600 text-white'
-                                                            : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
-                                                        'group flex items-center px-2 py-2 leading-6 font-medium'
-                                                    )}
-                                                    aria-current={
-                                                        item.href === currentPath
-                                                            ? 'page'
-                                                            : undefined
-                                                    }
-                                                >
-                                                    {item.title}
-                                                </a>
-                                            </Link>
-                                        ))
-                                    ) : (
-                                        NAV_ITEMS.map((item) => (
-                                            <Link key={item.title} href={item.href}>
-                                                <a
-                                                    className={classNames(
-                                                        item.href === currentPath
-                                                            ? 'border-b border-indigo-600 text-white'
-                                                            : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
-                                                        'group flex items-center px-2 py-2 leading-6 font-medium'
-                                                    )}
-                                                    aria-current={
-                                                        item.href === currentPath
-                                                            ? 'page'
-                                                            : undefined
-                                                    }
-                                                >
-                                                    {item.title}
-                                                </a>
-                                            </Link>
-                                        )))
-                                    }
+                                    {status !== 'authenticated'
+                                        ? NAV_AUTH.map((item) => (
+                                              <Link
+                                                  key={item.title}
+                                                  href={item.href}
+                                              >
+                                                  <a
+                                                      className={classNames(
+                                                          item.href ===
+                                                              currentPath
+                                                              ? 'border-b border-indigo-600 text-white'
+                                                              : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
+                                                          'group flex items-center px-2 py-2 leading-6 font-medium'
+                                                      )}
+                                                      aria-current={
+                                                          item.href ===
+                                                          currentPath
+                                                              ? 'page'
+                                                              : undefined
+                                                      }
+                                                  >
+                                                      {item.title}
+                                                  </a>
+                                              </Link>
+                                          ))
+                                        : NAV_ITEMS.map((item) => (
+                                              <Link
+                                                  key={item.title}
+                                                  href={item.href}
+                                              >
+                                                  <a
+                                                      className={classNames(
+                                                          item.href ===
+                                                              currentPath
+                                                              ? 'border-b border-indigo-600 text-white'
+                                                              : ' hover:border-b  hover:border-gray-200 text-neutral-300 ',
+                                                          'group flex items-center px-2 py-2 leading-6 font-medium'
+                                                      )}
+                                                      aria-current={
+                                                          item.href ===
+                                                          currentPath
+                                                              ? 'page'
+                                                              : undefined
+                                                      }
+                                                  >
+                                                      {item.title}
+                                                  </a>
+                                              </Link>
+                                          ))}
                                 </div>
                             </div>
                         </div>

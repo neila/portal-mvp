@@ -25,13 +25,13 @@
         @apply text-neutral-300 text-xl font-semibold;
     }
 
-    code{
+    code {
         @apply bg-neutral-500 text-gray-300;
         @apply py-1 px-2;
         @apply rounded;
     }
 
-    pre{
+    pre {
         @apply bg-neutral-500 text-gray-300;
         @apply py-1 px-2;
         @apply rounded;
@@ -44,14 +44,13 @@
     p {
         @apply text-neutral-400 leading-10;
     }
-    
+
     li {
         @apply text-neutral-400 leading-10 list-disc list-inside;
     }
 }
 
-
-@layer components{
+@layer components {
     .button {
         @apply inline-flex px-2.5 py-1.5 text-xs text-center items-center justify-center border border-transparent font-medium shadow-sm text-white bg-info-700 focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-gray-800;
         @apply disabled:bg-opacity-80;
@@ -86,11 +85,11 @@
     .button__xl {
         @apply px-12 py-3 text-base;
     }
-    .valid{
+    .valid {
         @apply text-success-400;
     }
-    .invalid{
-        @apply text-warning-500
+    .invalid {
+        @apply text-warning-500;
     }
     .card {
         @apply rounded-lg aspect-auto drop-shadow-xl p-2;
@@ -98,11 +97,10 @@
     .cardtitle {
         @apply text-neutral-200 text-xl laptop:text-4xl font-bold;
     }
-    
 
     @supports not (backdrop-filter: blur(24px)) {
         .backdrop-blur-xl {
-            background: rgba(255,255,255,.8);
+            background: rgba(255, 255, 255, 0.8);
         }
     }
 }

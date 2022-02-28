@@ -1,5 +1,5 @@
 import AppLayout from '@lib/components/Layouts/AppLayout'
-import { signIn } from "next-auth/react"
+import { signIn } from 'next-auth/react'
 import { useSession } from 'next-auth/react'
 import Loader from '@lib/components/Loader'
 import Router from 'next/router'
@@ -14,7 +14,7 @@ const Page = () => {
         return <Loader />
     }
 
-    if(session){
+    if (session) {
         Router.push('/home')
         return null
     }
@@ -26,8 +26,11 @@ const Page = () => {
 
                 <div className="my-6 p-2">
                     <p>
-                        Seems like you&apos;re still not logged in. Please 
-                        <button type="button" onClick={() => signIn()}> &nbsp;<a>login</a>&nbsp; </button> 
+                        Seems like you&apos;re still not logged in. Please
+                        <button type="button" onClick={() => signIn()}>
+                            {' '}
+                            &nbsp;<a>login</a>&nbsp;{' '}
+                        </button>
                         to continue.
                     </p>
                 </div>

@@ -1,7 +1,7 @@
-import { useRouter } from "next/router"
+import { useRouter } from 'next/router'
 import Loader from '@lib/components/Loader'
 import { useSession } from 'next-auth/react'
-import { useEffect } from "react"
+import { useEffect } from 'react'
 
 export default function Custom404() {
     const { status, data: session } = useSession({
@@ -16,7 +16,7 @@ export default function Custom404() {
 
     const router = useRouter()
 
-    if(!session){
+    if (!session) {
         router.push('/')
         return null
     }
@@ -24,5 +24,4 @@ export default function Custom404() {
     router.push('/home')
 
     return null
-    
 }

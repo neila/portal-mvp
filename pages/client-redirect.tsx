@@ -20,7 +20,7 @@ const Page = () => {
         router.push(`/home`)
         return null
     }
-    
+
     router.push(`/`)
     return (
         <>
@@ -28,8 +28,8 @@ const Page = () => {
                 <div>
                     <h1>
                         Hello, {session.user.name ?? session.user.email} This is
-                        a protected route. You can see it because you&apos;re logged
-                        in.
+                        a protected route. You can see it because you&apos;re
+                        logged in.
                     </h1>
                 </div>
                 <div className="my-6 p-2">
