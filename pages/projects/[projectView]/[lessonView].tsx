@@ -2,6 +2,7 @@ import Link from 'next/link'
 import LessonLayout from '@lib/components/Layouts/lessonLayout'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import CodeBlock from '@lib/components/CodeBlock'
 
 export default function project({
     projectView,
@@ -39,6 +40,7 @@ export default function project({
             <div className="mb-8">
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
+                    components={{code: CodeBlock,}}
                     transformImageUri={(uri) =>
                         uri.startsWith('http')
                             ? uri
@@ -51,7 +53,7 @@ export default function project({
 
                 <div className="mt-4 flex flex-row justify-between items-center">
                     {/* back to portal */}
-                    <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full">
+                    <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full cursor-pointer">
                         <Link
                             href={`/projects/${encodeURIComponent(projectView)}/ `}
                         >
@@ -64,7 +66,7 @@ export default function project({
                     {/* next button */}
                     {  
                         nextLessonPath ?  
-                        <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full">
+                        <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full cursor-pointer">
                             <Link href={`/projects/${nextLessonPath}/ `} >
                                 <a className="text-neutral-600 text-base laptop:text-lg font-bold">
                                     Next lesson
