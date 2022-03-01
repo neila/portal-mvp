@@ -46,9 +46,8 @@ export default function project({
                             ? uri
                             : `https://raw.githubusercontent.com/shiftbase-xyz/UNCHAIN-projects/main${uri}`
                     }
-                >
-                    {thisLessonContent}
-                </ReactMarkdown>
+                    children={thisLessonContent}
+                />
                 {airTable}
 
                 <div className="mt-4 flex flex-row justify-between items-center">
