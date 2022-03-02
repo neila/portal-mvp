@@ -234,6 +234,10 @@ const AppLayout = (props) => {
                             </div>
                         </div>
                     </main>
+                    <footer className="flex flex-row mb-4 mx-auto space-x-4">
+                        <Link href="https://time-waiter-9fd.notion.site/20220228-437efe5314d64e0f965efe911b062ce2"><a className="text-neutral-400" target="_blank">利用規約</a></Link>
+                        <Link href="https://time-waiter-9fd.notion.site/20220228-111bfdfab66e4911939ddf68cc1a96a7"><a className="text-neutral-400" target="_blank">プライバシーポリシー</a></Link>
+                    </footer>
                 </div>
             </div>
         </>

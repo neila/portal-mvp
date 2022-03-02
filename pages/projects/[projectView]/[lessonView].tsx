@@ -29,11 +29,11 @@ export default function project({
 
     return (
         <LessonLayout title={projectView}>
-            <div className="text-center mb-16 space-y-4">
-                <h1 className="text-5xl font-bold leading-7 text-neutral-400 sm:leading-9 sm:truncate">
+            <div className="text-center">
+                <h1 className="text-5xl font-bold text-neutral-400 tablet:truncate">
                     {projectView}
                 </h1>
-                <h2 className="text-3xl font-semibold leading-7 text-neutral-400 sm:leading-9 sm:truncate">
+                <h2 className="text-3xl font-semibold text-neutral-400 tab;et:truncate">
                     {lessonView}
                 </h2>
             </div>

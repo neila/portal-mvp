@@ -13,6 +13,7 @@ type LoginFormValues = {
     csrfToken: string
     email: string
     password: string
+    checkbox: boolean
 }
 
 export default function Page({ csrfToken, providers }) {
@@ -30,6 +31,7 @@ export default function Page({ csrfToken, providers }) {
                 callbackUrl: '/home',
                 email: data.email,
                 password: data.password,
+                checkbox: data.checkbox
             })
 
             setTimeout(() => {
@@ -116,10 +118,12 @@ export default function Page({ csrfToken, providers }) {
                 </div>
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                     <div className="py-8 px-4 mx-2 rounded-sm sm:px-10">
+                        {/* sign-in form */}
                         <form
                             className="text-center my-12"
                             onSubmit={handleSubmit(onSubmit)}
                         >
+                            {/* csrf Token */}
                             <input
                                 name="csrfToken"
                                 {...register('csrfToken')}
@@ -127,6 +131,8 @@ export default function Page({ csrfToken, providers }) {
                                 defaultValue={csrfToken}
                                 hidden
                             />
+
+                            {/* email */}
                             <div className="">
                                 <label
                                     htmlFor="email"
@@ -146,6 +152,8 @@ export default function Page({ csrfToken, providers }) {
                                     />
                                 </div>
                             </div>
+
+                            {/* password */}
                             <div>
                                 <div className="mt-8">
                                     <label
@@ -191,6 +199,24 @@ export default function Page({ csrfToken, providers }) {
                                 </div>
                             </div>
 
+                            {/* checkbox */}
+                            <div className="mt-1">
+                                <label className="container text-white">
+                                    <input
+                                        id="checkbox"
+                                        name="checkbox"
+                                        type="checkbox"
+                                        required
+                                    />
+                                    &nbsp;
+                                    <Link href="https://time-waiter-9fd.notion.site/20220228-437efe5314d64e0f965efe911b062ce2"><a target="_blank">利用規約</a></Link>
+                                    と
+                                    <Link href="https://time-waiter-9fd.notion.site/20220228-111bfdfab66e4911939ddf68cc1a96a7"><a target="_blank">プライバシーポリシー</a></Link>
+                                    に同意します
+                                </label>
+                            </div>
+
+                            {/* submit button */}
                             <div className="mt-6 space-y-2 flex justify-center">
                                 <button
                                     type="submit"

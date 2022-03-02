@@ -33,7 +33,7 @@
 
     pre {
         @apply bg-neutral-500 text-gray-300;
-        @apply py-1 px-1 overflow-x-auto;
+        @apply px-1 overflow-x-auto;
         @apply rounded;
     }
 
