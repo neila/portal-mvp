@@ -7,6 +7,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import Head from 'next/head'
 
 const LessonLayout = (props) => {
     const { status, data: session } = useSession({
@@ -47,6 +48,19 @@ const LessonLayout = (props) => {
 
     return (
         <>
+            <Head>
+                <title> {props.title} | UNCHAIN portal </title>
+                <link rel="icon" href="/favicon.ico" />
+                
+                <meta property="og:url" content="app.shiftbase.xyz" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="shiftbase, inc." />
+                <meta property="og:description" content="Let's get started with web3." />
+                <meta property="og:image" content="https://shiftbase.xyz/images/shiftbase-preview.png" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:creator" content="@_k1ddx" />
+            </Head>
             <div className="min-h-screen bg-neutral-200">
                 <div className="flex flex-col flex-1">
                     <div className="border-b">
