@@ -50,7 +50,7 @@ const AppLayout = (props) => {
         <>
             <Head>
                 <title> UNCHAIN portal </title>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/assets/favicon.ico" />
                 
                 <meta property="og:url" content="app.shiftbase.xyz" />
                 <meta property="og:type" content="website" />
