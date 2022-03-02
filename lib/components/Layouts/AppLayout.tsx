@@ -114,7 +114,7 @@ const AppLayout = (props) => {
                                                     />
                                                 </Menu.Button>
                                             </div>
-                                            {/* <Transition
+                                            <Transition
                                                 as={Fragment}
                                                 enter="transition ease-out duration-100"
                                                 enterFrom="transform opacity-0 scale-95"
@@ -124,7 +124,7 @@ const AppLayout = (props) => {
                                                 leaveTo="transform opacity-0 scale-95"
                                             >
                                                 <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
-                                                    {status == 'authenticated' ? (
+                                                    {/* {status == 'authenticated' ? (
                                                         <Menu.Item>
                                                             {({ active }) => (
                                                                 <a
@@ -142,7 +142,7 @@ const AppLayout = (props) => {
                                                                 </a>
                                                             )}
                                                         </Menu.Item>
-                                                    ) : (
+                                                    ) : ( */}
                                                         <Menu.Item>
                                                             {({ active }) => (
                                                                 <a
@@ -160,9 +160,9 @@ const AppLayout = (props) => {
                                                                 </a>
                                                             )}
                                                         </Menu.Item>
-                                                    )}
+                                                    {/* )} */}
                                                 </Menu.Items>
-                                            </Transition> */}
+                                            </Transition>
                                         </Menu>
                                     )}
                                 </div>
