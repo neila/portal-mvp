@@ -46,18 +46,16 @@
     }
     
     li {
-        @apply text-neutral-400 leading-10 list-outside;
+        @apply text-neutral-400 leading-10;
     }
 
     ol {
         @apply text-neutral-500 leading-10 list-decimal;
-        @apply inline-block;
         @apply ml-10;
     }
 
     ul {
         @apply text-neutral-500 leading-10 list-disc;
-        @apply inline-block;
         @apply ml-10;
     }
 
