@@ -211,7 +211,7 @@ export default function Page({ csrfToken, providers }) {
                                     &nbsp;
                                     <Link href="https://time-waiter-9fd.notion.site/20220228-437efe5314d64e0f965efe911b062ce2"><a target="_blank">利用規約</a></Link>
                                     と
-                                    <Link href="https://time-waiter-9fd.notion.site/20220228-111bfdfab66e4911939ddf68cc1a96a7"><a target="_blank">プライバシーポリシー</a></Link>
+                                    <Link href="https://time-waiter-9fd.notion.site/20220303-11d1b7d0e0384aa9912b6893decd51dc"><a target="_blank">プライバシーポリシー</a></Link>
                                     に同意します
                                 </label>
                             </div>
