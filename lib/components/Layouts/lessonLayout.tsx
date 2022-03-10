@@ -61,10 +61,10 @@ const LessonLayout = (props) => {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:creator" content="@_k1ddx" />
             </Head>
-            <div className="min-h-screen bg-neutral-200">
+            <div className="min-h-screen bg-neutral-100">
                 <div className="flex flex-col flex-1">
                     <div className="border-b">
-                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-200">
+                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-100">
                             <div className="flex-1 px-4 flex mt-1 justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <button
                                     type="button"
@@ -167,7 +167,7 @@ const LessonLayout = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-200">
+                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-100">
                             <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <div className="flex flex-1">
                                     {status !== 'authenticated'
@@ -224,7 +224,7 @@ const LessonLayout = (props) => {
                         </div>
                     </div>
                     <main className="flex-1 pb-8">
-                        <div className="bg-neutral-200">
+                        <div className="bg-neutral-100">
                             <div className="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
                                 <div className="pt-6 pb-2 md:flex md:items-center md:justify-between">
                                     <div className="flex-1 min-w-0">
@@ -247,7 +247,7 @@ const LessonLayout = (props) => {
                             </div>
                         </div>
 
-                        <div className="mt-2 bg-neutral-200">
+                        <div className="mt-2 bg-neutral-100">
                             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                                 {props.children}
                             </div>

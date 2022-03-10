@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import style from "@lib/styles/projectcard.module.css"
 
 const Page = ({ projects, projDescripts, projImages }) => {
     const { status, data: session } = useSession({
@@ -67,7 +68,7 @@ const Page = ({ projects, projDescripts, projImages }) => {
                                         <div className="space-y-2">
                                             {/* <h2 className="cardtitle"> {name} </h2> */}
                                             <Image src={projImages[i][1]} width={200} height={200}/>
-                                            <ReactMarkdown remarkPlugins={[remarkGfm]} transformImageUri={(uri) => uri.startsWith('http') ? uri : `https://raw.githubusercontent.com/shiftbase-xyz/UNCHAIN-projects/main${uri}`}>
+                                            <ReactMarkdown className={style.reactMarkDown} remarkPlugins={[remarkGfm]} transformImageUri={(uri) => uri.startsWith('http') ? uri : `https://raw.githubusercontent.com/shiftbase-xyz/UNCHAIN-projects/main${uri}`}>
                                                 {projDescripts[i][1]}
                                             </ReactMarkdown>
                                         </div>

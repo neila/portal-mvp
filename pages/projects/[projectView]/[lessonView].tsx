@@ -30,10 +30,10 @@ export default function project({
     return (
         <LessonLayout title={projectView}>
             <div className="text-center">
-                <h1 className="text-5xl font-bold text-neutral-400 tablet:truncate">
+                <h1 className="text-5xl font-bold text-neutral-500 tablet:truncate">
                     {projectView}
                 </h1>
-                <h2 className="text-3xl font-semibold text-neutral-400 tab;et:truncate">
+                <h2 className="text-3xl font-semibold text-neutral-500 tab;et:truncate">
                     {lessonView}
                 </h2>
             </div>

@@ -232,7 +232,7 @@ const AppLayout = (props) => {
                                         <div className="flex items-center">
                                             <div>
                                                 <div className="flex items-center">
-                                                    <h1 className="text-base laptop:text-xl font-bold leading-7 text-neutral-400 sm:leading-9 sm:truncate">
+                                                    <h1 className="text-base laptop:text-xl font-bold leading-7 text-neutral-300 sm:leading-9 sm:truncate">
                                                         {props.title}
                                                     </h1>
                                                 </div>
@@ -250,8 +250,8 @@ const AppLayout = (props) => {
                         </div>
                     </main>
                     <footer className="flex flex-row mb-4 mx-auto space-x-4">
-                        <Link href="https://time-waiter-9fd.notion.site/20220228-437efe5314d64e0f965efe911b062ce2"><a className="text-neutral-400" target="_blank">利用規約</a></Link>
-                        <Link href="https://time-waiter-9fd.notion.site/20220303-11d1b7d0e0384aa9912b6893decd51dc"><a className="text-neutral-400" target="_blank">プライバシーポリシー</a></Link>
+                        <Link href="https://time-waiter-9fd.notion.site/20220228-437efe5314d64e0f965efe911b062ce2"><a className="text-neutral-300" target="_blank">利用規約</a></Link>
+                        <Link href="https://time-waiter-9fd.notion.site/20220303-11d1b7d0e0384aa9912b6893decd51dc"><a className="text-neutral-300" target="_blank">プライバシーポリシー</a></Link>
                     </footer>
                 </div>
             </div>
