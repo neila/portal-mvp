@@ -41,6 +41,7 @@ export default function project({
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{code: CodeBlock,}}
+                    linkTarget={"_blank"}
                     transformImageUri={(uri) =>
                         uri.startsWith('http')
                             ? uri
