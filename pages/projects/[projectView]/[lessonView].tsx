@@ -66,13 +66,13 @@ export default function project({
                     {/* next button */}
                     {  
                         nextLessonPath ?  
-                        <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full cursor-pointer">
-                            <Link href={`/projects/${nextLessonPath}/ `} >
+                        <Link href={`/projects/${nextLessonPath}/ `} >
+                            <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full cursor-pointer">
                                 <a className="text-neutral-600 text-base laptop:text-lg font-bold">
                                     Next lesson
                                 </a>
-                            </Link>
-                        </div> : 
+                            </div>
+                        </Link> : 
                         <div></div> 
                     }
                 </div>
