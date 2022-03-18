@@ -35,10 +35,8 @@ export default function project({ projname, sections, lessons }) {
                                         <Link
                                             href={`/projects/${encodeURIComponent(projname)}/${encodeURIComponent(pagePath)}`}
                                         >
-                                            <a className="cursor-pointer ">
-                                                <div className="text-neutral-200 hover:text-info-300">
-                                                    {displayName}
-                                                </div>
+                                            <a className="cursor-pointer text-neutral-200 hover:text-info-300 hover:no-underline">
+                                                {displayName}
                                             </a>
                                         </Link>
                                     </div>
