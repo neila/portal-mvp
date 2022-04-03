@@ -99,7 +99,7 @@ export default function Page({ csrfToken, providers }) {
             <div className="sm:mx-auto sm:w-full sm:max-w-md text-center py-12">
                 <Link href="/">
                     <Image
-                        className="h-16 w-16 mx-auto"
+                        className="h-16 w-16 mx-auto cursor-pointer"
                         src="/assets/unchain.png"
                         alt="Unchain Logo"
                         height={60}

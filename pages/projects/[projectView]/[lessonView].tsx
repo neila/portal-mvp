@@ -84,7 +84,7 @@ export default function project({
 async function getProjects() {
     // call github API endpoint to get project directories
     const resProj = await fetch(
-        'https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents',
+        'https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents/docs',
         {
             headers: {
                 Authorization: 'token ' + process.env.GITHUB_AUTH_TOKEN,
@@ -110,7 +110,7 @@ async function getProjects() {
 async function getSections(project) {
     // call github API endpoint to get section directories
     const resSection = await fetch(
-        `https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents${project}/ja`,
+        `https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents/docs/${project}/ja`,
         {
             headers: {
                 Authorization: 'token ' + process.env.GITHUB_AUTH_TOKEN,
@@ -136,7 +136,7 @@ async function getSections(project) {
 async function getLessons(project, section) {
     // call github API endpoint to get lesson files
     const resLesson = await fetch(
-        `https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents${project}/ja/${section}`,
+        `https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents/docs/${project}/ja/${section}`,
         {
             headers: {
                 Authorization: 'token ' + process.env.GITHUB_AUTH_TOKEN,

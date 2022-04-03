@@ -89,7 +89,7 @@ export default Page
 export const getStaticProps = async () => {
     // Get projects
     const resProj = await fetch(
-        'https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents',
+        'https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents/docs/',
         {
             headers: {
                 Authorization: 'token ' + process.env.GITHUB_AUTH_TOKEN,
