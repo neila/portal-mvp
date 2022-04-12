@@ -51,50 +51,48 @@ export default function lesson({
                     children={thisLessonContent}
                 />
                 {airTable}
-
-                <div className="mt-4 relative mb-4">
-
-                    {/* previous button */}
-                    {  
-                        previousLessonPath ?  
-                        <Link href={`/projects/${previousLessonPath}/ `} >
-                            <div className="absolute inset-y-0 left-0">
-                                <div className="bg-info-100 border-2 px-4 py-2 rounded-full cursor-pointer">
-                                    <a className="text-neutral-600 text-base laptop:text-lg font-bold">
-                                        Previous lesson
-                                    </a>
-                                </div>
-                            </div>
-                        </Link> : 
-                        <div></div> 
-                    }
-
-                    {/* back to portal */}
-                    <Link href={`/projects/${encodeURIComponent(projectView)}/ `}>
-                        <div className="absolute inset-y-0">
-                            <div className="bg-neutral-300 border-2 px-4 py-2 rounded-full cursor-pointer">
+            </div>
+            <div className="relative my-4">
+                {/* previous button */}
+                {  
+                    previousLessonPath ?  
+                    <Link href={`/projects/${previousLessonPath}/ `} >
+                        <div className="absolute inset-y-0 left-4">
+                            <div className="bg-info-100 border-2 px-4 py-2 rounded-full cursor-pointer">
                                 <a className="text-neutral-600 text-base laptop:text-lg font-bold">
-                                    Back to project overview
+                                    Previous lesson
                                 </a>
                             </div>
                         </div>
-                    </Link>
+                    </Link> : 
+                    <div></div> 
+                }
 
-                    {/* next button */}
-                    {  
-                        nextLessonPath ?  
-                        <Link href={`/projects/${nextLessonPath}/ `} >
-                            <div className="absolute inset-y-0 right-0">
-                                <div className="bg-success-100 border-2 px-4 py-2 rounded-full cursor-pointer">
-                                    <a className="text-neutral-600 text-base laptop:text-lg font-bold">
-                                        Next lesson
-                                    </a>
-                                </div>
+                {/* back to portal */}
+                <Link href={`/projects/${encodeURIComponent(projectView)}/ `}>
+                    <div className="absolute inset-y-0">
+                        <div className="bg-neutral-300 border-2 px-4 py-2 rounded-full cursor-pointer">
+                            <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                                Back to project overview
+                            </a>
+                        </div>
+                    </div>
+                </Link>
+
+                {/* next button */}
+                {  
+                    nextLessonPath ?  
+                    <Link href={`/projects/${nextLessonPath}/ `} >
+                        <div className="absolute inset-y-0 right-0">
+                            <div className="bg-success-100 border-2 px-4 py-2 rounded-full cursor-pointer">
+                                <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                                    Next lesson
+                                </a>
                             </div>
-                        </Link> : 
-                        <div></div> 
-                    }
-                </div>
+                        </div>
+                    </Link> : 
+                    <div></div> 
+                }
             </div>
         </LessonLayout>
     )
