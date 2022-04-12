@@ -52,8 +52,7 @@ export default function lesson({
                 />
                 {airTable}
 
-                <div className="mt-4 relative">
-
+                <div className="my-4 relative">
                     {/* previous button */}
                     {  
                         previousLessonPath ?  
@@ -68,17 +67,6 @@ export default function lesson({
                         </Link> : 
                         <div></div> 
                     }
-
-                    {/* back to portal */}
-                    {/* <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full cursor-pointer">
-                        <Link
-                            href={`/projects/${encodeURIComponent(projectView)}/ `}
-                        >
-                            <a className="text-neutral-600 text-base laptop:text-lg font-bold">
-                                Back to project overview
-                            </a>
-                        </Link>
-                    </div> */}
 
                     {/* next button */}
                     {  
