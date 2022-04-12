@@ -52,7 +52,7 @@ export default function lesson({
                 />
                 {airTable}
 
-                <div className="my-4 relative h-8">
+                <div className="my-4 relative h-8 flex justify-center">
                     {/* previous button */}
                     {  
                         previousLessonPath ?  
