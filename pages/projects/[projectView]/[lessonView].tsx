@@ -52,7 +52,7 @@ export default function lesson({
                 />
                 {airTable}
 
-                <div className="my-4 relative h-8 flex justify-center">
+                <div className="my-4 relative h-8">
                     {/* previous button */}
                     {  
                         previousLessonPath ?  
@@ -70,7 +70,7 @@ export default function lesson({
 
                     {/* back to portal */}
                     <Link href={`/projects/${encodeURIComponent(projectView)}/ `} >
-                        <div className="absolute inset-y-0 left-1/2">
+                        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2">
                             <div className="bg-neutral-300 border-2 px-4 py-2 rounded-full cursor-pointer">
                                 <a className="text-neutral-600 text-base laptop:text-lg font-bold">
                                     Back to project overview
