@@ -8,6 +8,7 @@ export default function project({
     projectView,
     lessonView,
     thisLessonContent,
+    previousLessonPath,
     nextLessonPath,
     airTableFlag,
 }) {
@@ -52,6 +53,19 @@ export default function project({
                 {airTable}
 
                 <div className="mt-4 flex flex-row justify-between items-center">
+                    {/* previous button */}
+                    {  
+                        previousLessonPath ?  
+                        <Link href={`/projects/${previousLessonPath}/ `} >
+                            <div className="mb-4 bg-info-100 border-2 px-4 py-2 rounded-full cursor-pointer">
+                                <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                                    Previous lesson
+                                </a>
+                            </div>
+                        </Link> : 
+                        <div></div> 
+                    }
+
                     {/* back to portal */}
                     <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full cursor-pointer">
                         <Link
@@ -215,8 +229,9 @@ export async function getStaticProps({ params }) {
     const thisLessonContent = lessonContents[currentLessonIndex][0]
     const airTableFlag = lessonContents[currentLessonIndex][1]
     const nextLessonPath = (currentLessonIndex === lessons.length - 1) ? null : `${projectView}/${(lessonView.slice(0,-1)+(currentLessonIndex + 2).toString())}`
+    const previousLessonPath = (currentLessonIndex === 0) ? null : `${projectView}/${(lessonView.slice(0,-1)+(currentLessonIndex).toString())}`
 
     return {
-        props: { projectView, lessonView, thisLessonContent, nextLessonPath, airTableFlag },
+        props: { projectView, lessonView, thisLessonContent, previousLessonPath, nextLessonPath, airTableFlag },
     }
 }
