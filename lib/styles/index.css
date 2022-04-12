@@ -25,6 +25,14 @@
         @apply text-neutral-500 text-xl font-semibold py-5;
     }
 
+    h4 {
+        @apply text-neutral-500 text-lg font-semibold py-5;
+    }
+
+    h5 {
+        @apply text-neutral-500 text-base font-semibold py-5;
+    }
+
     code {
         @apply bg-neutral-500 text-neutral-200;
         @apply py-1 px-1;

@@ -4,10 +4,11 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import CodeBlock from '@lib/components/CodeBlock'
 
-export default function project({
+export default function lesson({
     projectView,
     lessonView,
     thisLessonContent,
+    previousLessonPath,
     nextLessonPath,
     airTableFlag,
 }) {
@@ -51,26 +52,32 @@ export default function project({
                 />
                 {airTable}
 
-                <div className="mt-4 flex flex-row justify-between items-center">
-                    {/* back to portal */}
-                    <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full cursor-pointer">
-                        <Link
-                            href={`/projects/${encodeURIComponent(projectView)}/ `}
-                        >
-                            <a className="text-neutral-600 text-base laptop:text-lg font-bold">
-                                Back to project overview
-                            </a>
-                        </Link>
-                    </div>
+                <div className="my-4 relative">
+                    {/* previous button */}
+                    {  
+                        previousLessonPath ?  
+                        <Link href={`/projects/${previousLessonPath}/ `} >
+                            <div className="absolute inset-y-0 left-0">
+                                <div className="bg-info-100 border-2 px-4 py-2 rounded-full cursor-pointer">
+                                    <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                                        Previous lesson
+                                    </a>
+                                </div>
+                            </div>
+                        </Link> : 
+                        <div></div> 
+                    }
 
                     {/* next button */}
                     {  
                         nextLessonPath ?  
                         <Link href={`/projects/${nextLessonPath}/ `} >
-                            <div className="mb-4 bg-success-100 border-2 px-4 py-2 rounded-full cursor-pointer">
-                                <a className="text-neutral-600 text-base laptop:text-lg font-bold">
-                                    Next lesson
-                                </a>
+                            <div className="absolute inset-y-0 right-0">
+                                <div className="bg-success-100 border-2 px-4 py-2 rounded-full cursor-pointer">
+                                    <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                                        Next lesson
+                                    </a>
+                                </div>
                             </div>
                         </Link> : 
                         <div></div> 
@@ -215,8 +222,9 @@ export async function getStaticProps({ params }) {
     const thisLessonContent = lessonContents[currentLessonIndex][0]
     const airTableFlag = lessonContents[currentLessonIndex][1]
     const nextLessonPath = (currentLessonIndex === lessons.length - 1) ? null : `${projectView}/${(lessonView.slice(0,-1)+(currentLessonIndex + 2).toString())}`
+    const previousLessonPath = (currentLessonIndex === 0) ? null : `${projectView}/${(lessonView.slice(0,-1)+(currentLessonIndex).toString())}`
 
     return {
-        props: { projectView, lessonView, thisLessonContent, nextLessonPath, airTableFlag },
+        props: { projectView, lessonView, thisLessonContent, previousLessonPath, nextLessonPath, airTableFlag },
     }
 }
