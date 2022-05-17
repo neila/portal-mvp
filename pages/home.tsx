@@ -67,7 +67,7 @@ const Page = ({ projects, projDescripts, projImages }) => {
                                     <Link href={`/projects/${encodeURIComponent(name)}`} passHref={true}>
                                         <div className="space-y-2">
                                             {/* <h2 className="cardtitle"> {name} </h2> */}
-                                            <Image src={projImages[i][1]} width={240} height={200}/>
+                                            <Image src={projImages[i][1]} width={280} height={200}/>
                                             <ReactMarkdown className={style.reactMarkDown} remarkPlugins={[remarkGfm]} transformImageUri={(uri) => uri.startsWith('http') ? uri : `https://raw.githubusercontent.com/shiftbase-xyz/UNCHAIN-projects/main${uri}`}>
                                                 {projDescripts[i][1]}
                                             </ReactMarkdown>
