@@ -16,6 +16,9 @@
         "db:studio": "prisma studio --schema=./db/schema.prisma",
         "now-build": "yarn generate --schema=./db/schema.prisma && next build"
     },
+    "prisma": {
+        "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} db/seed.ts"
+    },
     "dependencies": {
         "@headlessui/react": "^1.4.1",
         "@heroicons/react": "^1.0.5",
@@ -38,9 +41,6 @@
         "react-syntax-highlighter": "^15.4.5",
         "remark-gfm": "^3.0.1",
         "superagent": "^7.0.2"
-    },
-    "prisma": {
-        "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} db/seed.ts"
     },
     "devDependencies": {
         "@netlify/plugin-nextjs": "^4.0.0-beta.4",
