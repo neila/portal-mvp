@@ -114,7 +114,7 @@ export const getStaticProps = async () => {
             projects.map(async (p, i) => {
                 const descrURL = (
                     await fetch(
-                        `https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents/public/texts/${p.name}/description.md`,
+                        `https://api.github.com/repos/unchain-dev/UNCHAIN-projects/contents/public/texts/${p.name}/description.md`,
                         {
                             headers: {
                                 Authorization:
@@ -132,7 +132,7 @@ export const getStaticProps = async () => {
 
     // get Images
     const projImages = (await Promise.all(projects.map(async(p, i) => {
-        const imURL = (await fetch (`https://api.github.com/repos/shiftbase-xyz/UNCHAIN-projects/contents/public/squares/${p.name}/square.png`,
+        const imURL = (await fetch (`https://api.github.com/repos/unchain-dev/UNCHAIN-projects/contents/public/squares/${p.name}/square.png`,
         {
             headers: { "Authorization": "token " + process.env.GITHUB_AUTH_TOKEN }
         }).then(res => res.json())).download_url
