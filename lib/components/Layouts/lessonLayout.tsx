@@ -10,110 +10,108 @@ import Image from 'next/image'
 import Head from 'next/head'
 
 const LessonLayout = (props) => {
-    const { status, data: session } = useSession({
-        required: false,
-    })
+  const { status, data: session } = useSession({
+    required: false,
+  })
 
-    const router = useRouter()
+  const router = useRouter()
 
-    const currentPath = router.pathname
-    const NAV_AUTH = [
-        {
-            title: 'Auth',
-            href: '/',
-        },
-        // {
-        //     title: 'Client',
-        //     href: '/client',
-        // },
-        // {
-        //     title: 'Server',
-        //     href: '/server',
-        // },
-    ]
-    const NAV_ITEMS = [
-        {
-            title: 'Home',
-            href: '/home',
-        },
-        // {
-        //     title: 'Client Redirect',
-        //     href: '/client-redirect',
-        // },
-        // {
-        //     title: 'Server Redirect',
-        //     href: '/server-redirect',
-        // },
-    ]
+  const currentPath = router.pathname
+  const NAV_AUTH = [
+    {
+      title: 'Auth',
+      href: '/',
+    },
+    // {
+    //     title: 'Client',
+    //     href: '/client',
+    // },
+    // {
+    //     title: 'Server',
+    //     href: '/server',
+    // },
+  ]
+  const NAV_ITEMS = [
+    {
+      title: 'Home',
+      href: '/home',
+    },
+    // {
+    //     title: 'Client Redirect',
+    //     href: '/client-redirect',
+    // },
+    // {
+    //     title: 'Server Redirect',
+    //     href: '/server-redirect',
+    // },
+  ]
 
-    return (
-        <>
-            <Head>
-                <title> {props.title} | UNCHAIN portal </title>
-                <link rel="icon" href="/assets/favicon.ico" />
-                
-                <meta property="og:url" content="app.shiftbase.xyz" />
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="shiftbase, inc." />
-                <meta property="og:description" content="Let's get started with web3." />
-                <meta property="og:image" content="https://shiftbase.xyz/images/shiftbase-preview.png" />
+  return (
+    <>
+      <Head>
+        <title> {props.title} | UNCHAIN portal </title>
+        <link rel="icon" href="/assets/favicon.ico" />
 
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:creator" content="@_k1ddx" />
-            </Head>
-            <div className="min-h-screen bg-neutral-100">
-                <div className="flex flex-col flex-1">
-                    <div className="border-b">
-                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-100">
-                            <div className="flex-1 px-4 flex mt-1 justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
-                                <button
-                                    type="button"
-                                    className="px-4 text-neutral-400 focus:outline-none"
-                                >
-                                    <Image
-                                        className="h-8 w-8 mx-auto"
-                                        src="/assets/unchain.png"
-                                        alt="Unchain Logo"
-                                        height={60}
-                                        width={60}
-                                    />
-                                </button>
-                                <div className="flex-1 flex"></div>
-                                <div className="ml-4 flex items-center md:ml-6">
-                                    {status == 'authenticated' ? (
-                                        <div></div>
-                                    ) : (
-                                        <Menu
-                                            as="div"
-                                            className="ml-3 relative"
-                                        >
-                                            <div>
-                                                <Menu.Button className="max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 p-2 lg:rounded-md lg:hover:bg-gray-50">
-                                                    {session?.user?.image ? (
-                                                        <Image
-                                                            className="h-6 w-6 rounded-full"
-                                                            src={
-                                                                session.user
-                                                                    .image
-                                                            }
-                                                            alt="User Avatar"
-                                                        />
-                                                    ) : (
-                                                        <UserIcon className="h-6 w-6 rounded-full" />
-                                                    )}
+        <meta property="og:url" content="app.shiftbase.xyz" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="shiftbase, inc." />
+        <meta
+          property="og:description"
+          content="Let's get started with web3."
+        />
+        <meta
+          property="og:image"
+          content="https://shiftbase.xyz/images/shiftbase-preview.png"
+        />
 
-                                                    <span className="hidden  text-neutral-600 text-sm font-medium lg:block">
-                                                        <span className="sr-only">
-                                                            Open user menu for{' '}
-                                                        </span>
-                                                    </span>
-                                                    <ChevronDownIcon
-                                                        className="flex-shrink-0 h-5 w-5 text-neutral-400"
-                                                        aria-hidden="true"
-                                                    />
-                                                </Menu.Button>
-                                            </div>
-                                            {/* <Transition
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@_k1ddx" />
+      </Head>
+      <div className="min-h-screen bg-neutral-100">
+        <div className="flex flex-col flex-1">
+          <div className="border-b">
+            <div className="relative flex-shrink-0 flex h-16 bg-neutral-100">
+              <div className="flex-1 px-4 flex mt-1 justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+                <button
+                  type="button"
+                  className="px-4 text-neutral-400 focus:outline-none"
+                >
+                  <Image
+                    className="h-8 w-8 mx-auto"
+                    src="/assets/unchain.png"
+                    alt="Unchain Logo"
+                    height={60}
+                    width={60}
+                  />
+                </button>
+                <div className="flex-1 flex"></div>
+                <div className="ml-4 flex items-center md:ml-6">
+                  {status == 'authenticated' ? (
+                    <div></div>
+                  ) : (
+                    <Menu as="div" className="ml-3 relative">
+                      <div>
+                        <Menu.Button className="max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 p-2 lg:rounded-md lg:hover:bg-gray-50">
+                          {session?.user?.image ? (
+                            <Image
+                              className="h-6 w-6 rounded-full"
+                              src={session.user.image}
+                              alt="User Avatar"
+                            />
+                          ) : (
+                            <UserIcon className="h-6 w-6 rounded-full" />
+                          )}
+
+                          <span className="hidden  text-neutral-600 text-sm font-medium lg:block">
+                            <span className="sr-only">Open user menu for </span>
+                          </span>
+                          <ChevronDownIcon
+                            className="flex-shrink-0 h-5 w-5 text-neutral-400"
+                            aria-hidden="true"
+                          />
+                        </Menu.Button>
+                      </div>
+                      {/* <Transition
                                                 as={Fragment}
                                                 enter="transition ease-out duration-100"
                                                 enterFrom="transform opacity-0 scale-95"
@@ -162,101 +160,87 @@ const LessonLayout = (props) => {
                                                     )}
                                                 </Menu.Items>
                                             </Transition> */}
-                                        </Menu>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="relative flex-shrink-0 flex h-16 bg-neutral-100">
-                            <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
-                                <div className="flex flex-1">
-                                    {status !== 'authenticated'
-                                        ? NAV_AUTH.map((item) => (
-                                              <Link
-                                                  key={item.title}
-                                                  href={item.href}
-                                              >
-                                                  <a
-                                                      className={classNames(
-                                                          item.href ===
-                                                              currentPath
-                                                              ? 'border-b border-indigo-600 text-white'
-                                                              : ' hover:border-b  hover:border-gray-200 text-neutral-500 ',
-                                                          'group flex items-center px-2 py-2 leading-6 font-medium'
-                                                      )}
-                                                      aria-current={
-                                                          item.href ===
-                                                          currentPath
-                                                              ? 'page'
-                                                              : undefined
-                                                      }
-                                                  >
-                                                      {item.title}
-                                                  </a>
-                                              </Link>
-                                          ))
-                                        : NAV_ITEMS.map((item) => (
-                                              <Link
-                                                  key={item.title}
-                                                  href={item.href}
-                                              >
-                                                  <a
-                                                      className={classNames(
-                                                          item.href ===
-                                                              currentPath
-                                                              ? 'border-b border-indigo-600 text-white'
-                                                              : ' hover:border-b  hover:border-info-300 text-neutral-500 ',
-                                                          'group flex items-center px-2 py-2 leading-6 font-medium'
-                                                      )}
-                                                      aria-current={
-                                                          item.href ===
-                                                          currentPath
-                                                              ? 'page'
-                                                              : undefined
-                                                      }
-                                                  >
-                                                      {item.title}
-                                                  </a>
-                                              </Link>
-                                          ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <main className="flex-1 pb-8">
-                        <div className="bg-neutral-100">
-                            <div className="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
-                                <div className="pt-6 pb-2 md:flex md:items-center md:justify-between">
-                                    <div className="flex-1 min-w-0">
-                                        <div className="flex items-center">
-
-                                            {/* back to portal */}
-                                            <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full">
-                                                <Link
-                                                    href={`/projects/${encodeURIComponent(props.title)}/ `}
-                                                >
-                                                    <a className="text-neutral-600 text-base laptop:text-lg font-bold">
-                                                        Back to project overview
-                                                    </a>
-                                                </Link>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-2 bg-neutral-100">
-                            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                                {props.children}
-                            </div>
-                        </div>
-                    </main>
+                    </Menu>
+                  )}
                 </div>
+              </div>
             </div>
-        </>
-    )
+            <div className="relative flex-shrink-0 flex h-16 bg-neutral-100">
+              <div className="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+                <div className="flex flex-1">
+                  {status !== 'authenticated'
+                    ? NAV_AUTH.map((item) => (
+                        <Link key={item.title} href={item.href}>
+                          <a
+                            className={classNames(
+                              item.href === currentPath
+                                ? 'border-b border-indigo-600 text-white'
+                                : ' hover:border-b  hover:border-gray-200 text-neutral-500 ',
+                              'group flex items-center px-2 py-2 leading-6 font-medium'
+                            )}
+                            aria-current={
+                              item.href === currentPath ? 'page' : undefined
+                            }
+                          >
+                            {item.title}
+                          </a>
+                        </Link>
+                      ))
+                    : NAV_ITEMS.map((item) => (
+                        <Link key={item.title} href={item.href}>
+                          <a
+                            className={classNames(
+                              item.href === currentPath
+                                ? 'border-b border-indigo-600 text-white'
+                                : ' hover:border-b  hover:border-info-300 text-neutral-500 ',
+                              'group flex items-center px-2 py-2 leading-6 font-medium'
+                            )}
+                            aria-current={
+                              item.href === currentPath ? 'page' : undefined
+                            }
+                          >
+                            {item.title}
+                          </a>
+                        </Link>
+                      ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <main className="flex-1 pb-8">
+            <div className="bg-neutral-100">
+              <div className="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+                <div className="pt-6 pb-2 md:flex md:items-center md:justify-between">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center">
+                      {/* back to portal */}
+                      <div className="mb-4 bg-neutral-300 border-2 px-4 py-2 rounded-full">
+                        <Link
+                          href={`/projects/${encodeURIComponent(
+                            props.title
+                          )}/ `}
+                        >
+                          <a className="text-neutral-600 text-base laptop:text-lg font-bold">
+                            Back to project overview
+                          </a>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-2 bg-neutral-100">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                {props.children}
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default LessonLayout

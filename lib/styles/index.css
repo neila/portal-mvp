@@ -8,137 +8,137 @@
 } */
 
 @layer base {
-    blockquote {
-        @apply my-6 p-2 rounded-md bg-neutral-100;
-        @apply overflow-auto break-words;
-    }
+  blockquote {
+    @apply my-6 p-2 rounded-md bg-neutral-100;
+    @apply overflow-auto break-words;
+  }
 
-    h1 {
-        @apply text-neutral-200 text-3xl laptop:text-6xl font-bold;
-    }
+  h1 {
+    @apply text-neutral-200 text-3xl laptop:text-6xl font-bold;
+  }
 
-    h2 {
-        @apply text-neutral-300 laptop:text-4xl font-bold py-5;
-    }
+  h2 {
+    @apply text-neutral-300 laptop:text-4xl font-bold py-5;
+  }
 
-    h3 {
-        @apply text-neutral-500 text-xl font-semibold py-5;
-    }
+  h3 {
+    @apply text-neutral-500 text-xl font-semibold py-5;
+  }
 
-    h4 {
-        @apply text-neutral-500 text-lg font-semibold py-5;
-    }
+  h4 {
+    @apply text-neutral-500 text-lg font-semibold py-5;
+  }
 
-    h5 {
-        @apply text-neutral-500 text-base font-semibold py-5;
-    }
+  h5 {
+    @apply text-neutral-500 text-base font-semibold py-5;
+  }
 
-    code {
-        @apply bg-neutral-500 text-neutral-200;
-        @apply py-1 px-1;
-        @apply rounded;
-    }
+  code {
+    @apply bg-neutral-500 text-neutral-200;
+    @apply py-1 px-1;
+    @apply rounded;
+  }
 
-    pre {
-        @apply bg-neutral-500 text-neutral-200;
-        @apply px-1 overflow-x-auto;
-        @apply rounded;
-    }
+  pre {
+    @apply bg-neutral-500 text-neutral-200;
+    @apply px-1 overflow-x-auto;
+    @apply rounded;
+  }
 
-    pre > code {
-        @apply px-0;
-    }
+  pre > code {
+    @apply px-0;
+  }
 
-    a {
-        @apply text-blue-500 hover:underline;
-    }
+  a {
+    @apply text-blue-500 hover:underline;
+  }
 
-    p {
-        @apply text-neutral-500 leading-10;
-    }
-    
-    li {
-        @apply text-neutral-500 leading-10;
-    }
+  p {
+    @apply text-neutral-500 leading-10;
+  }
 
-    ol {
-        @apply text-neutral-500 leading-10 list-decimal;
-        @apply ml-10;
-    }
+  li {
+    @apply text-neutral-500 leading-10;
+  }
 
-    ul {
-        @apply text-neutral-500 leading-10 list-disc;
-        @apply ml-10;
-    }
+  ol {
+    @apply text-neutral-500 leading-10 list-decimal;
+    @apply ml-10;
+  }
 
-    hr {
-        @apply mt-8 mb-5 border-neutral-500 mx-auto;
-    }
+  ul {
+    @apply text-neutral-500 leading-10 list-disc;
+    @apply ml-10;
+  }
+
+  hr {
+    @apply mt-8 mb-5 border-neutral-500 mx-auto;
+  }
 }
 
 @layer components {
-    .button {
-        @apply inline-flex px-2.5 py-1.5 text-xs text-center items-center justify-center border border-transparent font-medium shadow-sm text-white bg-info-700 focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-gray-800;
-        @apply disabled:bg-opacity-80;
-        @apply rounded-md;
-    }
+  .button {
+    @apply inline-flex px-2.5 py-1.5 text-xs text-center items-center justify-center border border-transparent font-medium shadow-sm text-white bg-info-700 focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-gray-800;
+    @apply disabled:bg-opacity-80;
+    @apply rounded-md;
+  }
 
-    .button__round {
-        @apply rounded-full !important;
-    }
+  .button__round {
+    @apply rounded-full !important;
+  }
 
-    .button__secondary {
-        @apply bg-white text-black;
-        @apply border border-gray-400 mx-auto;
-    }
+  .button__secondary {
+    @apply bg-white text-black;
+    @apply border border-gray-400 mx-auto;
+  }
 
-    .button__third {
-        @apply bg-black text-white;
-    }
+  .button__third {
+    @apply bg-black text-white;
+  }
 
-    .button__sm {
-        @apply px-4 py-1.5 text-xs;
-    }
+  .button__sm {
+    @apply px-4 py-1.5 text-xs;
+  }
 
-    .button__md {
-        @apply px-6 py-2 text-sm;
-    }
+  .button__md {
+    @apply px-6 py-2 text-sm;
+  }
 
-    .button__lg {
-        @apply px-8 py-2 text-sm;
-    }
+  .button__lg {
+    @apply px-8 py-2 text-sm;
+  }
 
-    .button__xl {
-        @apply px-12 py-3 text-base;
-    }
-    .valid {
-        @apply text-success-400;
-    }
-    .invalid {
-        @apply text-warning-500;
-    }
-    .card {
-        @apply rounded-lg aspect-auto drop-shadow-xl p-2;
-    }
-    .cardtitle {
-        @apply text-neutral-200 text-xl laptop:text-4xl font-bold;
-    }
+  .button__xl {
+    @apply px-12 py-3 text-base;
+  }
+  .valid {
+    @apply text-success-400;
+  }
+  .invalid {
+    @apply text-warning-500;
+  }
+  .card {
+    @apply rounded-lg aspect-auto drop-shadow-xl p-2;
+  }
+  .cardtitle {
+    @apply text-neutral-200 text-xl laptop:text-4xl font-bold;
+  }
 
-    @supports not (backdrop-filter: blur(24px)) {
-        .backdrop-blur-xl {
-            background: rgba(255, 255, 255, 0.8);
-        }
+  @supports not (backdrop-filter: blur(24px)) {
+    .backdrop-blur-xl {
+      background: rgba(255, 255, 255, 0.8);
     }
+  }
 }
 
 @layer utilities {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .hide-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-    }
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

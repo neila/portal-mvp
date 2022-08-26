@@ -4,24 +4,24 @@ import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
 
 export default function Custom404() {
-    const { status, data: session } = useSession({
-        required: false,
-    })
+  const { status, data: session } = useSession({
+    required: false,
+  })
 
-    if (status === 'loading') {
-        return <Loader />
-    }
+  if (status === 'loading') {
+    return <Loader />
+  }
 
-    console.log(status, session)
+  console.log(status, session)
 
-    const router = useRouter()
+  const router = useRouter()
 
-    if (!session) {
-        router.push('/')
-        return null
-    }
-
-    router.push('/home')
-
+  if (!session) {
+    router.push('/')
     return null
+  }
+
+  router.push('/home')
+
+  return null
 }
