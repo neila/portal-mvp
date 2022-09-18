@@ -54,27 +54,14 @@ export default function project({ projname, sections, lessons }) {
 
 async function getProjects() {
   // call github API endpoint to get projects
-  const resProj = await fetch(
+  const projects = await fetch(
     'https://api.github.com/repos/unchain-dev/UNCHAIN-projects/contents/docs/',
     {
       headers: {
         Authorization: 'token ' + process.env.GITHUB_AUTH_TOKEN,
       },
     }
-  )
-  const items = await resProj.json()
-
-  // get the paths we want to pre-render based on projects
-  const projects = items
-    .map((i) => {
-      if (i.type !== 'dir' || i.name === 'public') {
-        return null
-      } else {
-        return i
-      }
-    })
-    .filter(Boolean)
-
+  ).then((res) => res.json())
   return projects
 }
 
