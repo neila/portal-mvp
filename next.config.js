@@ -15,6 +15,15 @@ if (!process.env.NEXTAUTH_URL) {
 }
 
 module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/:slug*',
+        destination: 'https://app.unchain.tech/',
+        permanent: true,
+      },
+    ]
+  },
   target: 'experimental-serverless-trace',
   future: {
     webpack5: true,
